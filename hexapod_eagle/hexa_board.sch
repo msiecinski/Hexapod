@@ -13518,8 +13518,13 @@ Distributor Buerklin, 11G810</description>
 <part name="R11" library="rcl" deviceset="R-EU_" device="R0805" value="510r"/>
 <part name="GND7" library="supply1" deviceset="GND" device=""/>
 <part name="5V" library="mc33269" deviceset="MC33269" device=""/>
-<part name="GND9" library="supply1" deviceset="GND" device=""/>
 <part name="3V" library="mc33269" deviceset="MC33269" device=""/>
+<part name="R12" library="rcl" deviceset="R-EU_" device="R0805" value="510r"/>
+<part name="R13" library="rcl" deviceset="R-EU_" device="R0805" value="510r"/>
+<part name="LED_COM1" library="led" deviceset="LED" device="SML0805"/>
+<part name="LED_COM2" library="led" deviceset="LED" device="SML0805"/>
+<part name="GND10" library="supply1" deviceset="GND" device=""/>
+<part name="GND14" library="supply1" deviceset="GND" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13592,8 +13597,13 @@ Distributor Buerklin, 11G810</description>
 <instance part="R11" gate="G$1" x="30.48" y="10.16" rot="R90"/>
 <instance part="GND7" gate="1" x="30.48" y="-5.08"/>
 <instance part="5V" gate="G$1" x="27.94" y="271.78"/>
-<instance part="GND9" gate="1" x="60.96" y="276.86"/>
 <instance part="3V" gate="G$1" x="27.94" y="226.06"/>
+<instance part="R12" gate="G$1" x="124.46" y="25.4" rot="R90"/>
+<instance part="R13" gate="G$1" x="134.62" y="25.4" rot="R90"/>
+<instance part="LED_COM1" gate="G$1" x="124.46" y="38.1"/>
+<instance part="LED_COM2" gate="G$1" x="134.62" y="38.1"/>
+<instance part="GND10" gate="1" x="124.46" y="12.7"/>
+<instance part="GND14" gate="1" x="134.62" y="12.7"/>
 </instances>
 <busses>
 </busses>
@@ -13808,6 +13818,11 @@ Distributor Buerklin, 11G810</description>
 <wire x1="38.1" y1="254" x2="45.72" y2="254" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="254" x2="45.72" y2="259.08" width="0.1524" layer="91"/>
 <junction x="38.1" y="254"/>
+<wire x1="45.72" y1="254" x2="55.88" y2="254" width="0.1524" layer="91"/>
+<junction x="45.72" y="254"/>
+<pinref part="5V" gate="G$1" pin="VOUT"/>
+<wire x1="40.64" y1="281.94" x2="55.88" y2="281.94" width="0.1524" layer="91"/>
+<wire x1="55.88" y1="254" x2="55.88" y2="281.94" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="WIFI" gate="G$1" pin="GND"/>
@@ -13869,10 +13884,14 @@ Distributor Buerklin, 11G810</description>
 <wire x1="30.48" y1="-2.54" x2="30.48" y2="5.08" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="5V" gate="G$1" pin="VOUT"/>
-<pinref part="GND9" gate="1" pin="GND"/>
-<wire x1="40.64" y1="281.94" x2="60.96" y2="281.94" width="0.1524" layer="91"/>
-<wire x1="60.96" y1="281.94" x2="60.96" y2="279.4" width="0.1524" layer="91"/>
+<pinref part="R12" gate="G$1" pin="1"/>
+<pinref part="GND10" gate="1" pin="GND"/>
+<wire x1="124.46" y1="20.32" x2="124.46" y2="15.24" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="R13" gate="G$1" pin="1"/>
+<pinref part="GND14" gate="1" pin="GND"/>
+<wire x1="134.62" y1="20.32" x2="134.62" y2="15.24" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="INT" class="0">
@@ -14332,7 +14351,7 @@ Distributor Buerklin, 11G810</description>
 <segment>
 <pinref part="CZUJNIK_PODLOZA" gate="A" pin="11"/>
 <wire x1="129.54" y1="68.58" x2="119.38" y2="68.58" width="0.1524" layer="91"/>
-<label x="119.38" y="68.58" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="119.38" y="68.58" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="LEG5" class="0">
@@ -14344,7 +14363,7 @@ Distributor Buerklin, 11G810</description>
 <segment>
 <pinref part="CZUJNIK_PODLOZA" gate="A" pin="9"/>
 <wire x1="129.54" y1="71.12" x2="119.38" y2="71.12" width="0.1524" layer="91"/>
-<label x="119.38" y="71.12" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="119.38" y="71.12" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="LEG4" class="0">
@@ -14356,14 +14375,14 @@ Distributor Buerklin, 11G810</description>
 <segment>
 <pinref part="CZUJNIK_PODLOZA" gate="A" pin="7"/>
 <wire x1="129.54" y1="73.66" x2="119.38" y2="73.66" width="0.1524" layer="91"/>
-<label x="119.38" y="73.66" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="119.38" y="73.66" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="LEG1" class="0">
 <segment>
 <pinref part="CZUJNIK_PODLOZA" gate="A" pin="1"/>
-<wire x1="129.54" y1="81.28" x2="121.92" y2="83.82" width="0.1524" layer="91"/>
-<label x="121.92" y="83.82" size="1.016" layer="95" rot="R180" xref="yes"/>
+<wire x1="129.54" y1="81.28" x2="119.38" y2="81.28" width="0.1524" layer="91"/>
+<label x="119.38" y="81.28" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="TEENSY41" gate="G$1" pin="21/A7"/>
@@ -14375,7 +14394,7 @@ Distributor Buerklin, 11G810</description>
 <segment>
 <pinref part="CZUJNIK_PODLOZA" gate="A" pin="3"/>
 <wire x1="129.54" y1="78.74" x2="119.38" y2="78.74" width="0.1524" layer="91"/>
-<label x="119.38" y="78.74" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="119.38" y="78.74" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="TEENSY41" gate="G$1" pin="20/A6"/>
@@ -14387,7 +14406,7 @@ Distributor Buerklin, 11G810</description>
 <segment>
 <pinref part="CZUJNIK_PODLOZA" gate="A" pin="5"/>
 <wire x1="129.54" y1="76.2" x2="119.38" y2="76.2" width="0.1524" layer="91"/>
-<label x="119.38" y="76.2" size="1.27" layer="95" rot="R180" xref="yes"/>
+<label x="119.38" y="76.2" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
 <pinref part="TEENSY41" gate="G$1" pin="17/A3"/>
@@ -14522,6 +14541,44 @@ Distributor Buerklin, 11G810</description>
 <pinref part="R10" gate="G$1" pin="2"/>
 <wire x1="30.48" y1="30.48" x2="30.48" y2="33.02" width="0.1524" layer="91"/>
 <label x="30.48" y="33.02" size="1.016" layer="95" rot="R90" xref="yes"/>
+</segment>
+</net>
+<net name="N$8" class="0">
+<segment>
+<pinref part="LED_COM1" gate="G$1" pin="C"/>
+<pinref part="R12" gate="G$1" pin="2"/>
+<wire x1="124.46" y1="33.02" x2="124.46" y2="30.48" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="N$9" class="0">
+<segment>
+<pinref part="LED_COM2" gate="G$1" pin="C"/>
+<pinref part="R13" gate="G$1" pin="2"/>
+<wire x1="134.62" y1="33.02" x2="134.62" y2="30.48" width="0.1524" layer="91"/>
+</segment>
+</net>
+<net name="LED1" class="0">
+<segment>
+<pinref part="LED_COM1" gate="G$1" pin="A"/>
+<wire x1="124.46" y1="40.64" x2="124.46" y2="45.72" width="0.1524" layer="91"/>
+<label x="124.46" y="45.72" size="1.778" layer="95" rot="R90" xref="yes"/>
+</segment>
+<segment>
+<pinref part="TEENSY41" gate="G$1" pin="31/A12"/>
+<wire x1="15.24" y1="96.52" x2="10.16" y2="96.52" width="0.1524" layer="91"/>
+<label x="10.16" y="96.52" size="1.016" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="LED2" class="0">
+<segment>
+<pinref part="LED_COM2" gate="G$1" pin="A"/>
+<wire x1="134.62" y1="40.64" x2="134.62" y2="45.72" width="0.1524" layer="91"/>
+<label x="134.62" y="45.72" size="1.778" layer="95" rot="R90" xref="yes"/>
+</segment>
+<segment>
+<pinref part="TEENSY41" gate="G$1" pin="32/A13"/>
+<wire x1="15.24" y1="93.98" x2="10.16" y2="93.98" width="0.1524" layer="91"/>
+<label x="10.16" y="93.98" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
