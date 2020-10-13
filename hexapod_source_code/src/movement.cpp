@@ -48,10 +48,12 @@ void SetLegs(int legNum,hexapod *pos)
     while(!SetLeg((legNum+4),pos[4+legNum]));
 }
 
-void SlideHorizontal(int movement_r,int movement_l){
+void SlideHorizontal(int movement_r,int movement_l)
+{
 
     /* Function SlideHorizontal is used to 
         move horizontal entire surface of the robot
+        sings plus/minus 1 can be changed !!!!!!!!!!!!!!!!!!!!!!!!!!!!
     */
 
 	int i = 0;
@@ -60,37 +62,60 @@ void SlideHorizontal(int movement_r,int movement_l){
 	_Bool SligerFlag = 1;
 
 	for(int k = 0; k < 6; k++)
-        pos[k].xyz = hexapodControl[k].xyz; //need change olny xyz.x value
-    pos[5].delay = 1;
-                           //after last leg always delay
-    while(SligerFlag)
     {
+        pos[k].xyz = hexapodControl[k].xyz; //need change olny xyz.x value
+        pos[k].delay = 0;                   //clear all delay flags (for be sure)
+    }
+                           
+    while(SligerFlag)
+    {   
+        if(movement_r!=0)
+        {
+            if(movement_r>0)
+            {
+                j=1;
+                movement_r--;
+            }
+            else 
+            {
+                j=-1;
+                movement_r++;
+            }
+        }
+        else
+        {
+                j=0;
+        }
+        if(movement_l!=0)
+        {
+            if(movement_l>0)
+            {
+                i=1;
+                movement_l--;
+            }
+            else 
+            {
+                i=-1;
+                movement_l++;
+            }
+        }
+        else
+        {
+            i=0;
+        }
         pos[0].xyz.x = hexapodControl[0].xyz.x - i;
         pos[1].xyz.x = hexapodControl[1].xyz.x - i;
         pos[2].xyz.x = hexapodControl[2].xyz.x - i;
         pos[3].xyz.x = hexapodControl[3].xyz.x + j;
         pos[4].xyz.x = hexapodControl[4].xyz.x + j;
         pos[5].xyz.x = hexapodControl[5].xyz.x + j;
-        pos[5].delay = 1;
+        pos[5].delay = 1;               //after last leg always delay
         for(int k = 0; k < 6; k++)
-         while(!SetPosition(k,hexapodControl[k]))
-	
-        if(j == movement_r && i == movement_l)
+        {
+            while(!SetPosition(k,pos[k]));
+        }
+        if(0 == movement_r && 0 == movement_l)
             SligerFlag = 0;
-        if(i != movement_l)
-        {
-            if(movement_l > 0)
-                i++;
-            else
-                i--;
-        }
-        if(j != movement_r)
-        {
-            if(movement_r > 0)
-                j++;
-            else
-                j--;
-        }
     }
 }
 
