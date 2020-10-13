@@ -18,6 +18,7 @@ _Bool SetPosition(int leg, hexapod &pos)
     if(delayFlag == 1)
         return FALSE;
     hexapodControl[leg].xyz = pos.xyz;
+    hexapodControl[leg].delay = pos.delay;
     InversKinematics(hexapodControl[leg]);
 
     if(hexapodControl[leg].delay == 1)
