@@ -11,12 +11,28 @@ void SetupLeg(void)
 {
     pinMode(LEG6_1, OUTPUT);
     pinMode(LEG6_2, OUTPUT);
+    pinMode(LEG6_3, OUTPUT);
+
     pinMode(LEG5_1, OUTPUT);
-    pinMode(LEG4_3, OUTPUT);
-    pinMode(LEG4_2, OUTPUT);
+    pinMode(LEG5_2, OUTPUT);
+    pinMode(LEG5_3, OUTPUT);
+
     pinMode(LEG4_1, OUTPUT);
-    pinMode(LEG3_3, OUTPUT);
+    pinMode(LEG4_2, OUTPUT);
+    pinMode(LEG4_3, OUTPUT);
+
+    pinMode(LEG3_1, OUTPUT);
     pinMode(LEG3_2, OUTPUT);
+    pinMode(LEG3_3, OUTPUT);
+
+    pinMode(LEG2_1, OUTPUT);
+    pinMode(LEG2_2, OUTPUT);
+    pinMode(LEG2_3, OUTPUT);
+
+    pinMode(LEG1_1, OUTPUT);
+    pinMode(LEG1_2, OUTPUT);
+    pinMode(LEG1_3, OUTPUT);
+    
 }
 
 void SetupTimer3(int time_us)
