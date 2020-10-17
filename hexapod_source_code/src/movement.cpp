@@ -3,7 +3,7 @@
 #include <Gyroscope.hpp>
 
 extern std::array<hexapod, 6> hexapodControl;
-volatile bool delayFlag = 0;
+volatile uint32_t delayFlag = 0;
 
 
 
@@ -15,15 +15,15 @@ _Bool SetPosition(int leg, hexapod &pos)
         if delayFlag = 0 function set position and return true(1)
     */
 
-    if(delayFlag == 1)
+    if(delayFlag != 0)
         return FALSE;
     hexapodControl[leg].xyz = pos.xyz;
     hexapodControl[leg].delay = pos.delay;
     InversKinematics(hexapodControl[leg]);
 
-    if(hexapodControl[leg].delay == 1)
+    if(hexapodControl[leg].delay != 0)
     {
-        delayFlag = 1;  //should be clear via intterupt every x(?) ms!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+        delayFlag = hexapodControl[leg].delay;  //should be clear via intterupt every x(?) ms!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
         hexapodControl[leg].delay = 0; //clear flag in matrix(Kappa) 
     }
     return TRUE;

@@ -4,8 +4,7 @@
 
 extern std::array<hexapod, 6> hexapodControl;
 extern double angle_x,angle_y;
-extern volatile bool delayFlag;
-
+extern volatile uint32_t delayFlag;
 
 void PWM50Hz(void)
 {   
@@ -86,33 +85,33 @@ int ledState = LOW;
 volatile unsigned long blinkCount = 0; // use volatile for shared variables
 
 
-void DelayFunc() {
-    static int delayCounter = 0;
-  if (ledState == LOW) {
-    ledState = HIGH;
-    blinkCount = blinkCount + 1;  // increase when LED turns on
-  } else {
-    ledState = LOW;
-  }
-  digitalWrite(LED_BUILTIN, ledState);
+void DelayFunc()
+ {
+    static uint32_t delayCounter = 0;
+    if (ledState == LOW) {
+        ledState = HIGH;
+        blinkCount = blinkCount + 1;  // increase when LED turns on
+    } 
+    else
+    {
+        ledState = LOW;
+    }
+    digitalWrite(LED_BUILTIN, ledState);
     /*
     Implementation delay function
     (used by function SetPosition())
     delay = DelayBase * DelayCounterMaxVal (us)
     */
-  if(delayFlag == 1);
-  {
-    if(delayCounter == DELAYCOUNTERMAXVAL)
-    {
-        delayFlag = 0;
-        delayCounter = 0;
-
-    }
-    else
-    {
+    if(delayFlag != 0);
+    { 
+        if(delayCounter == (delayFlag * DELAYCOUNTERMAXVAL))
+        {
+            delayFlag = 0;
+            delayCounter = 0;
+        }
+        else
+        {
         delayCounter++;
+        }
     }
-    
-  }
-    
 }
