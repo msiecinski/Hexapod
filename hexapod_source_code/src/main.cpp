@@ -21,7 +21,7 @@ void setup(void)
    
     for(int i=0;i<6;i++)
      {
-         SetPosition(i,startup);
+       while(!SetPosition(i,startup));
      }  
 }
 
