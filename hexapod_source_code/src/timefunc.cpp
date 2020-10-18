@@ -7,7 +7,7 @@ extern volatile uint32_t delayFlag;
 
 void PWM50Hz(void)
 {   
-    static volatile int counter = 0;
+    static volatile uint32_t counter = 0;
 
     if(counter < (INTERRUPTCOUNTER))
 		counter++;
