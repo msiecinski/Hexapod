@@ -10,30 +10,30 @@
 
     struct angle
     {
-        double q1;
-        double q2;
-        double q3;
+        volatile double q1;
+        volatile double q2;
+        volatile double q3;
     };
     struct position                         //before named as coordinates
     {
-        int x;
-        int y;
-        int z;
+        volatile double x;
+        volatile double y;
+        volatile double z;
     };
     struct  hexapod
     {
         angle angles;
         position xyz;
-        int duty[3];                       //duty for pwm
-        bool delay;                        //delay value flag
+        volatile uint32_t duty[3];                           //duty for pwm
+        volatile uint32_t delay;                        //delay value flag
     };
 
     enum movetype {forvard = 0, backward, forvardleft, forvardright, left, right};
 
     //constants based on the robot dimensions 
-    #define a1   (3)
-    #define a2   (5.5)
-    #define a3   (8)
+    #define a1   (5)
+    #define a2   (7.5)
+    #define a3   (2)
     #define E    (2)
 
     #define CIRCLEVAL           2                       //diff ofset for turning
@@ -45,8 +45,8 @@
     #define LIMITHI             500                     //limit for skip conditions after every 2.5ms
     
     #define PWMTIMEBASE         5                       //time base for interrupts
-    #define DELAYTIMEBASE       500000                  //time base for delay interrupts
-    #define DELAYCOUNTERMAXVAL  1                       //max value for delay_counter
+    #define DELAYTIMEBASE       1000                  //time base for delay interrupts
+    #define DELAYCOUNTERMAXVAL  100                       //max value for delay_counter
        
      //constants for bool fucntions
     #define TRUE                1          
