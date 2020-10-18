@@ -36,8 +36,14 @@ void AngleToDuty(hexapod &pos)
         100=0.5ms 
         20/9-"equivalent" 0.45 degress
     */
-    pos.duty[0] = (int)(pos.angles.q1*20/9)+100;
-    pos.duty[1] = (int)(pos.angles.q2*20/9)+100;
-    pos.duty[2] = (int)(pos.angles.q3*20/9)+100;
+   /*
+        if angle <0- duty lovest work value duty = 100
+        if >180 deg duty = 500
+        else calculate
+       // else  convert angle too duty and cut if>512(0x1FF)
+    */
+    pos.duty[0] = (pos.angles.q1<0) ? 100 : (pos.angles.q1>180) ? 500 : ((uint32_t)((pos.angles.q1*20/9)+100)); 
+    pos.duty[1] = (pos.angles.q2<0) ? 100 : (pos.angles.q2>180) ? 500 : ((uint32_t)((pos.angles.q2*20/9)+100));
+    pos.duty[2] = (pos.angles.q3<0) ? 100 : (pos.angles.q3>180) ? 500 : ((uint32_t)((pos.angles.q3*20/9)+100));
 }
 
