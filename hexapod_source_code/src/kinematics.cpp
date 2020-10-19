@@ -10,21 +10,21 @@ void InversKinematics(hexapod &newpos)
     */
     double r,d;
 	const double PI_value = 3.14159265358979323846; 
-	newpos.angles.q1 = atan2(newpos.xyz.y,newpos.xyz.x);
+
+    newpos.angles.q1 = atan2(newpos.xyz.y,newpos.xyz.x);                                                            //q1
 
     r = sqrt(newpos.xyz.x * newpos.xyz.x+newpos.xyz.y * newpos.xyz.y);
-	d = (((r-a1) * (r-a1) + (newpos.xyz.z-E) * (newpos.xyz.z-E) - (a2*a2)-(a3*a3)) / (2*a2*a3));
-    newpos.angles.q3 = atan2(-sqrt(1-d), d);
+	d = (((r-A1) * (r-A1) + (newpos.xyz.z-E) * (newpos.xyz.z-E) - (A2*A2)-(A3*A3)) / (2*A2*A3));
+    newpos.angles.q3 = atan2(-sqrt(1-d), d);                                                                        //q3
 
-	newpos.angles.q2 = atan2(newpos.xyz.z-E, r-a1) - atan2(a3*sin(newpos.angles.q3), a2+a3*cos(newpos.angles.q3));
+	newpos.angles.q2 = atan2(newpos.xyz.z-E, r-A1) - atan2(A3*sin(newpos.angles.q3), A2+A3*cos(newpos.angles.q3));  //q2
     /*
        TODO: Look @ https://github.com/msiecinski/Quadruped/blob/master/scr/inv.c
         line 37_
     */
     newpos.angles.q1 *= (180 / PI_value);
-    newpos.angles.q2 *= (180 / PI_value);
-    newpos.angles.q3 *= (180 / PI_value);
-
+    newpos.angles.q2 = (newpos.angles.q2*(180 / PI_value))+90;
+    newpos.angles.q3 = (newpos.angles.q3 * (180 / PI_value))+135;
 	AngleToDuty(newpos);
 }
 
