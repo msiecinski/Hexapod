@@ -18,6 +18,8 @@ _Bool SetPosition(int leg, hexapod &pos)
     if(delayFlag != 0)
         return FALSE;
     hexapodControl[leg].xyz = pos.xyz;
+     if(leg>2)
+        hexapodControl[leg].xyz.x = -pos.xyz.x;
     hexapodControl[leg].delay = pos.delay;
     InversKinematics(hexapodControl[leg]);
 
@@ -34,7 +36,7 @@ _Bool SetLeg(int leg,hexapod &pos)
      return SetPosition(leg,pos);
 }
 
-void SetLegs(int legNum,hexapod *pos)
+void SetThreeLegs(int legNum,hexapod *pos)
 {
     /*  Function is used to set position 
         three legs at the same time(1,3,5 or 2,4,6)
@@ -46,6 +48,20 @@ void SetLegs(int legNum,hexapod *pos)
     while(!SetLeg((legNum+0),pos[0+legNum]));
     while(!SetLeg((legNum+2),pos[2+legNum]));
     while(!SetLeg((legNum+4),pos[4+legNum]));
+}
+
+void SetAllLegs(hexapod *pos)
+{
+   
+    /*  Function is used to set position 
+        all legs @same time(if not delay performed)
+    */
+    while(!SetLeg((0),pos[0]));
+    while(!SetLeg((1),pos[1]));
+    while(!SetLeg((2),pos[2]));
+    while(!SetLeg((3),pos[3]));
+    while(!SetLeg((4),pos[4]));
+    while(!SetLeg((5),pos[5]));
 }
 
 void SlideHorizontal(int movement_r,int movement_l)
@@ -109,7 +125,7 @@ void SlideHorizontal(int movement_r,int movement_l)
         pos[3].xyz.x = hexapodControl[3].xyz.x + j;
         pos[4].xyz.x = hexapodControl[4].xyz.x + j;
         pos[5].xyz.x = hexapodControl[5].xyz.x + j;
-        pos[5].delay = 1;               //after last leg always delay
+        pos[5].delay = 5;               //after last leg always delay
         for(int k = 0; k < 6; k++)
         {
             while(!SetPosition(k,pos[k]));
@@ -127,10 +143,6 @@ _Bool CheckGround(int leg)
 void Move(movetype direction,int offset)
 {
 
-    GyroReadAngle();
-    delayFlag=1;
-    while(delayFlag);
-    return;
     /*
         Function  Move is used to implementation robot walk
         in set direction and distance
@@ -139,18 +151,16 @@ void Move(movetype direction,int offset)
         2.Quantization  
         3.Leg 3(base position)
         TODO:
-            Slide horizontall needed to add ;> //done
-            Check ground add
+            Check ground
         
     */
-   int posOffset[6];          //calculate offests depends on actual posiotn and move type(direction)
-   hexapod setPosition[6];    //calculate step position for all legs
-  
+    int posOffset[6];          //calculate offests depends on actual posiotn and move type(direction)
+    int posOffsetTMP[6];
+    hexapod setPosition[6];    //calculate step position for all legs
     int dX[6];                //diff between base leg[2] and all another legs 
-    int slide;                //value for slide
-
+  
     switch(direction)
-   {
+    {
        default:
        case forvard:
        {
@@ -198,26 +208,38 @@ void Move(movetype direction,int offset)
        }
    }
     
-    slide = (int)(posOffset[2]/2); 
-
     for(int i = 0; i<6; i++)
     {   
         //use for compress diff position (maybe bcs scan floor)
         dX[i] = hexapodControl[i].xyz.x - hexapodControl[2].xyz.x;  
-        posOffset[i] -= dX[i];
+        posOffset[i] -= dX[i];              
+        posOffsetTMP[i] = posOffset[i];         //copy value for nextinterration
+        if(i%2)
+            posOffset[i] *= (-posOffset[2]);      //3 on ground 
+        
     }
-   
     /*  
         quantization of the movement
-        first 3 legs
-        next slide
-        next second 3 legs
+        first 3 legs move on thheground
+        3 legs above the ground
     */
     for(int j=0; j<2; j++)
     {
+        //move up 3 legs
+        for(int i = j;  i<6; )
+        {
+            setPosition[i].xyz.x = hexapodControl[i].xyz.x;
+            setPosition[i].xyz.y = hexapodControl[i].xyz.y;
+            setPosition[i].xyz.z = hexapodControl[i].xyz.z+MOVEHEIGHT;//////!!!!!!!!!!!we will see value @future
+            i += 2;     //bcs 0-2-4 or 1-3-5 
+        }
+        setPosition[4+j].delay = 1;
+        SetThreeLegs(j,setPosition);
+
+        //now lets move
         while(posOffset[0+j] || posOffset[2+j] || posOffset[4+j])
         {
-            for(int i = j;  i<6;    )
+            for(int i = 0;  i<6; i++)
             {
                 if(posOffset[i])
                 {
@@ -235,32 +257,34 @@ void Move(movetype direction,int offset)
                         setPosition[i].xyz.x = hexapodControl[i].xyz.x;  //do nothing untill all posOffset[i]!-=0;
                 }
                 setPosition[i].xyz.y = hexapodControl[i].xyz.y;
-                setPosition[i].xyz.z = BASEHEIGHT+MOVEHEIGHT;
-                i += 2;     //bcs 0-2-4 or 1-3-5
-            }
+                setPosition[i].xyz.z = hexapodControl[i].xyz.z;
+           }
             //set delay
-            setPosition[4+j].delay = 1;
-            SetLegs(j,setPosition);
+            setPosition[5].delay = 1;
+            SetAllLegs(setPosition);
         }
-           //compress axis Z(HEIGHT)
+        //move down slowly
         for(int k=1; k<=MOVEHEIGHT; k++)
         {
-            for(int i = j;  i<6;    )
+            for(int i = j;  i<6; )
             {
                 setPosition[i].xyz.x = hexapodControl[i].xyz.x;
                 setPosition[i].xyz.y = hexapodControl[i].xyz.y;
                 setPosition[i].xyz.z = hexapodControl[i].xyz.z-k;
                 i += 2;     //bcs 0-2-4 or 1-3-5 
             }
+            //CheckGround() here is needed !!!!!!!!!!!!!!!!!
             setPosition[4+j].delay = 1;
-            SetLegs(j,setPosition);
+            SetThreeLegs(j,setPosition);
         }
-        //CheckGround(j);
-        //CheckGround(j+2);
-        //CheckGround(j+4);
-        SlideHorizontal(slide,slide);
+         for(int i = 0; i<6; i++)
+        {   
+            if(i%2)
+                posOffset[i] = posOffsetTMP[i];
+            else
+                posOffset[i] = posOffsetTMP[2];
+        }
     }
-    
     //TODO:check the ground!!!!!!!!!!!!!!!!!!
 }
 
@@ -288,3 +312,4 @@ void TestSuppFunction(int legNum,int *posOffset,hexapod *setPosition)
                 i += 2;     //bcs 0-2-4 or 1-3-5
             }   
 }
+
