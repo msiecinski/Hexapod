@@ -19,25 +19,23 @@ void InversKinematics(hexapod &newpos)
 
 	newpos.angles.q2 = atan2(newpos.xyz.z-E, r-A1) - atan2(A3*sin(newpos.angles.q3), A2+A3*cos(newpos.angles.q3));  //q2
     /*
-       TODO: Look @ https://github.com/msiecinski/Quadruped/blob/master/scr/inv.c
-        line 37_
+        90 and 180 value based on set servos "0" posiotion 
     */
     newpos.angles.q1 *= (180 / PI_value);
     newpos.angles.q2 = (newpos.angles.q2*(180 / PI_value))+90;
-    newpos.angles.q3 = (newpos.angles.q3 * (180 / PI_value))+135;
-	AngleToDuty(newpos);
+    newpos.angles.q3 = (newpos.angles.q3 * (180 / PI_value))+180;
+    
+    AngleToDuty(newpos);
 }
 
 void AngleToDuty(hexapod &pos)
 {
     /*
-        Function AngleToDuty conver calculate angles to
-        duty value for pwm singlal
+        Function AngleToDuty convert calculate angles to
+        duty value for pwm singnal
         100=0.5ms 
         20/9-"equivalent" 0.45 degress
-    */
-   /*
-        if angle <0- duty lovest work value duty = 100
+        if angle <0 - duty lovest work value duty = 100
         if >180 deg duty = 500
         else calculate
        // else  convert angle too duty and cut if>512(0x1FF)
