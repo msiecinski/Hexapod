@@ -313,3 +313,52 @@ void TestSuppFunction(int legNum,int *posOffset,hexapod *setPosition)
             }   
 }
 
+void MoveAtPlace(movetype direction,int offset)
+{
+    hexapod setPosition[6];
+    int moveOffset;
+    _Bool axis;
+
+    switch(direction)
+    {
+        case up:
+            moveOffset = 1;
+            axis = 0;
+            break;
+        case down:
+            moveOffset = -1;
+            axis = 0;
+            break;
+        case wider:
+            moveOffset = 1;
+            axis = 1;
+            break;
+        case narrower:
+            moveOffset = -1;
+            axis = 1;
+            break;
+        default:
+            moveOffset = 0;
+            axis=0;
+            break;
+    }
+    for(int k=0; k<=offset; k++)
+    {
+        for(int i = 0;  i<6; i++ )
+        {
+            setPosition[i].xyz.x = hexapodControl[i].xyz.x;
+            if(axis == 0)
+            {
+                setPosition[i].xyz.y = hexapodControl[i].xyz.y;
+                setPosition[i].xyz.z = hexapodControl[i].xyz.z + (moveOffset);
+            }
+            else
+            {
+                setPosition[i].xyz.y = hexapodControl[i].xyz.y + (moveOffset);
+                setPosition[i].xyz.z = hexapodControl[i].xyz.z;
+            }
+        }
+        setPosition[5].delay = 1;
+        SetAllLegs(setPosition);
+    }
+}

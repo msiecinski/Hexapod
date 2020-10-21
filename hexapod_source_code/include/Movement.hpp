@@ -9,6 +9,7 @@ void SetThreeLegs(int,hexapod *);
 void SetAllLegs(hexapod *);
 void SlideHorizontal(int ,int );    //horizontal movement of the entire robot
 void Move(movetype,int);            //direction,offset  
+void MoveAtPlace(movetype,int);
 
 
 #endif /* Movement_H_ */
