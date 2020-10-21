@@ -2,9 +2,9 @@
 #include <Kinematics.hpp>
 #include <Gyroscope.hpp>
 
+
 extern std::array<hexapod, 6> hexapodControl;
 volatile uint32_t delayFlag = 0;
-
 
 
 _Bool SetPosition(int leg, hexapod &pos)
@@ -142,7 +142,6 @@ _Bool CheckGround(int leg)
 
 void Move(movetype direction,int offset)
 {
-
     /*
         Function  Move is used to implementation robot walk
         in set direction and distance
@@ -152,8 +151,8 @@ void Move(movetype direction,int offset)
         3.Leg 3(base position)
         TODO:
             Check ground
-        
     */
+
     int posOffset[6];          //calculate offests depends on actual posiotn and move type(direction)
     int posOffsetTMP[6];
     hexapod setPosition[6];    //calculate step position for all legs
@@ -216,7 +215,6 @@ void Move(movetype direction,int offset)
         posOffsetTMP[i] = posOffset[i];         //copy value for nextinterration
         if(i%2)
             posOffset[i] *= (-posOffset[2]);      //3 on ground 
-        
     }
     /*  
         quantization of the movement
@@ -254,7 +252,7 @@ void Move(movetype direction,int offset)
                         posOffset[i]++; 
                     }
                     else  
-                        setPosition[i].xyz.x = hexapodControl[i].xyz.x;  //do nothing untill all posOffset[i]!-=0;
+                        setPosition[i].xyz.x = hexapodControl[i].xyz.x;  //do nothing untill all posOffset[i]!-= 0;
                 }
                 setPosition[i].xyz.y = hexapodControl[i].xyz.y;
                 setPosition[i].xyz.z = hexapodControl[i].xyz.z;
@@ -291,26 +289,26 @@ void Move(movetype direction,int offset)
 void TestSuppFunction(int legNum,int *posOffset,hexapod *setPosition)
 {
      for(int i = legNum;  i<6;    )
+    {
+        if(posOffset[i])
+        {
+            setPosition[i].xyz.x = hexapodControl[i].xyz.x + 1;
+            posOffset[i]--; 
+        }
+        else
+        {
+            if(posOffset[i]<0)
             {
-                if(posOffset[i])
-                {
-                    setPosition[i].xyz.x = hexapodControl[i].xyz.x + 1;
-                    posOffset[i]--; 
-                }
-                else
-                {
-                    if(posOffset[i]<0)
-                    {
-                        setPosition[i].xyz.x = hexapodControl[i].xyz.x - 1;
-                        posOffset[i]++; 
-                    }
-                    else  
-                        setPosition[i].xyz.x = hexapodControl[i].xyz.x;  //do nothing untill all posOffset[i]!-=0;
-                }
-                setPosition[i].xyz.y = hexapodControl[i].xyz.y;
-                setPosition[i].xyz.z = BASEHEIGHT+MOVEHEIGHT;
-                i += 2;     //bcs 0-2-4 or 1-3-5
-            }   
+                setPosition[i].xyz.x = hexapodControl[i].xyz.x - 1;
+                posOffset[i]++; 
+            }
+            else  
+                setPosition[i].xyz.x = hexapodControl[i].xyz.x;  //do nothing untill all posOffset[i]!-=0;
+        }
+        setPosition[i].xyz.y = hexapodControl[i].xyz.y;
+        setPosition[i].xyz.z = BASEHEIGHT+MOVEHEIGHT;
+        i += 2;     //bcs 0-2-4 or 1-3-5
+    }   
 }
 
 void MoveAtPlace(movetype direction,int offset)
