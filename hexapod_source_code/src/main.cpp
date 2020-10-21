@@ -14,7 +14,7 @@ volatile int baseWidth = BASEWIDTH;
 void setup(void)
 {
     hexapod startup;
-    startup.xyz = {0,0,0};
+    //startup.xyz = {-0,baseHeight,baseWidth};
     startup.delay = 1;
 
     Serial.begin(115200);         //olny in debug version
@@ -24,9 +24,9 @@ void setup(void)
     gyroStatus = SetupMPU6050();
     SetupPS4();
     for(int i=0;i<6;i++)
-     {
-       while(!SetPosition(i,startup));
-     }  
+    {
+      while(!SetPosition(i,startup));
+    }  
 }
 
 void loop(void)
