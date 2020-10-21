@@ -11,10 +11,13 @@ volatile int stepSize = STEPSIZE;
 volatile int baseHeight = BASEHEIGHT;
 volatile int baseWidth = BASEWIDTH;
 
+
+
 void setup(void)
 {
     hexapod startup;
     //startup.xyz = {-0,baseHeight,baseWidth};
+    startup.xyz = {-0,10.5,-4};
     startup.delay = 1;
 
     Serial.begin(115200);         //olny in debug version
@@ -33,6 +36,6 @@ void loop(void)
 {
   while(1)
   {
-   Move(forvard,3);
+    ; 
   }
 }

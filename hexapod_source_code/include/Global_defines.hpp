@@ -14,7 +14,7 @@
         volatile double q2;
         volatile double q3;
     };
-    struct position                         //before named as coordinates
+    struct position                                      //before named as coordinates
     {
         volatile double x;
         volatile double y;
@@ -24,7 +24,7 @@
     {
         angle angles;
         position xyz;
-        volatile uint32_t duty[3];                           //duty for pwm
+        volatile uint32_t duty[3];                      //duty for pwm
         volatile uint32_t delay;                        //delay value flag
     };
 
@@ -44,11 +44,11 @@
 
     #define CALIBRATION         7                       //calibration interupt for 50Hz pwm
     #define INTERRUPTCOUNTER    (4000 - CALIBRATION)    //interupt counter for 50Hz pwm
-    #define LIMITHI             500                     //limit for skip conditions after every 2.5ms
+    #define LIMITHI             (500 + 12)              //limit for skip conditions after every 2.5ms //12 bcs of 0x1FF
     
     #define PWMTIMEBASE         5                       //time base for interrupts
-    #define DELAYTIMEBASE       1000                  //time base for delay interrupts
-    #define DELAYCOUNTERMAXVAL  100                       //max value for delay_counter
+    #define DELAYTIMEBASE       1000                    //time base for delay interrupts
+    #define DELAYCOUNTERMAXVAL  100                     //max value for delay_counter
        
      //constants for bool fucntions
     #define TRUE                1          
