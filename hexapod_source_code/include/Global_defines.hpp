@@ -28,17 +28,19 @@
         volatile uint32_t delay;                        //delay value flag
     };
 
-    enum movetype {forvard = 0, backward, forvardleft, forvardright, left, right};
+    enum movetype {forvard = 0, backward, forvardleft, forvardright, left, right, up, down,wider,narrower };
 
     //constants based on the robot dimensions 
-    #define a1   (5)
-    #define a2   (7.5)
-    #define a3   (2)
+    #define A1   (5)
+    #define A2   (7.5)
+    #define A3   (2)
     #define E    (2)
 
     #define CIRCLEVAL           2                       //diff ofset for turning
     #define BASEHEIGHT          (-5)
     #define MOVEHEIGHT          3
+    #define STEPSIZE            3
+    #define BASEWIDTH           10
 
     #define CALIBRATION         7                       //calibration interupt for 50Hz pwm
     #define INTERRUPTCOUNTER    (4000 - CALIBRATION)    //interupt counter for 50Hz pwm
