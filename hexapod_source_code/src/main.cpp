@@ -3,9 +3,13 @@
 #include <Init.hpp>
 #include <Kinematics.hpp>
 #include <Movement.hpp>
+#include <Ps4control.hpp>
 
 std::array<hexapod, 6> hexapodControl;
 _Bool gyroStatus = 0;
+volatile int stepSize = STEPSIZE;
+volatile int baseHeight = BASEHEIGHT;
+volatile int baseWidth = BASEWIDTH;
 
 void setup(void)
 {
@@ -18,7 +22,7 @@ void setup(void)
     DelayTimer(DELAYTIMEBASE);
     SetupLeg();
     gyroStatus = SetupMPU6050();
-   
+    SetupPS4();
     for(int i=0;i<6;i++)
      {
        while(!SetPosition(i,startup));
