@@ -13473,8 +13473,8 @@ Distributor Buerklin, 11G810</description>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="+3V4" library="supply1" deviceset="+3V3" device=""/>
 <part name="MPU6050" library="pinhead" deviceset="PINHD-1X5" device=""/>
-<part name="C7" library="rcl" deviceset="CPOL-EU" device="SMCA" value="10uF"/>
-<part name="C8" library="rcl" deviceset="CPOL-EU" device="SMCA" value="10uF"/>
+<part name="C7" library="rcl" deviceset="CPOL-EU" device="SMCB" value="10uF"/>
+<part name="C8" library="rcl" deviceset="CPOL-EU" device="SMCB" value="10uF"/>
 <part name="+3V5" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND11" library="supply1" deviceset="GND" device=""/>
 <part name="GND12" library="supply1" deviceset="GND" device=""/>
@@ -13484,8 +13484,8 @@ Distributor Buerklin, 11G810</description>
 <part name="TEENSY41" library="teensy" deviceset="TEENSY_3.5/3.6_BASIC" device=""/>
 <part name="GND1" library="supply1" deviceset="GND" device=""/>
 <part name="C1" library="rcl" deviceset="CPOL-EU" device="SMCA" value="100n"/>
-<part name="C2" library="rcl" deviceset="CPOL-EU" device="SMCA" value="10uF"/>
-<part name="C3" library="rcl" deviceset="CPOL-EU" device="SMCA" value="10uF"/>
+<part name="C2" library="rcl" deviceset="CPOL-EU" device="SMCB" value="10uF"/>
+<part name="C3" library="rcl" deviceset="CPOL-EU" device="SMCB" value="10uF"/>
 <part name="C4" library="rcl" deviceset="CPOL-EU" device="SMCA" value="100n"/>
 <part name="P+1" library="supply1" deviceset="+5V" device=""/>
 <part name="WIFI" library="SparkFun-RF" deviceset="ESP8266_ESP-01" device=""/>
@@ -13550,7 +13550,7 @@ Distributor Buerklin, 11G810</description>
 <instance part="MPU6050" gate="A" x="121.92" y="116.84"/>
 <instance part="C7" gate="G$1" x="10.16" y="210.82"/>
 <instance part="C8" gate="G$1" x="43.18" y="210.82"/>
-<instance part="+3V5" gate="G$1" x="50.8" y="226.06"/>
+<instance part="+3V5" gate="G$1" x="50.8" y="243.84"/>
 <instance part="GND11" gate="1" x="25.4" y="198.12"/>
 <instance part="GND12" gate="1" x="78.74" y="187.96"/>
 <instance part="GND13" gate="1" x="78.74" y="205.74"/>
@@ -13562,7 +13562,7 @@ Distributor Buerklin, 11G810</description>
 <instance part="C2" gate="G$1" x="12.7" y="264.16"/>
 <instance part="C3" gate="G$1" x="38.1" y="264.16"/>
 <instance part="C4" gate="G$1" x="45.72" y="264.16"/>
-<instance part="P+1" gate="1" x="45.72" y="276.86"/>
+<instance part="P+1" gate="1" x="45.72" y="292.1"/>
 <instance part="WIFI" gate="G$1" x="154.94" y="139.7"/>
 <instance part="GND2" gate="1" x="185.42" y="129.54"/>
 <instance part="+3V1" gate="G$1" x="119.38" y="154.94"/>
@@ -13615,19 +13615,18 @@ Distributor Buerklin, 11G810</description>
 <wire x1="93.98" y1="27.94" x2="93.98" y2="35.56" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<wire x1="33.02" y1="218.44" x2="43.18" y2="218.44" width="0.1524" layer="91"/>
 <pinref part="C8" gate="G$1" pin="+"/>
 <wire x1="43.18" y1="218.44" x2="43.18" y2="213.36" width="0.1524" layer="91"/>
 <wire x1="43.18" y1="218.44" x2="50.8" y2="218.44" width="0.1524" layer="91"/>
-<junction x="43.18" y="218.44"/>
 <pinref part="+3V5" gate="G$1" pin="+3V3"/>
-<wire x1="50.8" y1="218.44" x2="50.8" y2="223.52" width="0.1524" layer="91"/>
+<wire x1="50.8" y1="218.44" x2="50.8" y2="236.22" width="0.1524" layer="91"/>
 <pinref part="C10" gate="G$1" pin="+"/>
+<wire x1="50.8" y1="236.22" x2="50.8" y2="241.3" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="218.44" x2="50.8" y2="213.36" width="0.1524" layer="91"/>
 <junction x="50.8" y="218.44"/>
-<pinref part="3V" gate="G$1" pin="GND/ADJ"/>
-<wire x1="25.4" y1="223.52" x2="33.02" y2="223.52" width="0.1524" layer="91"/>
-<wire x1="33.02" y1="223.52" x2="33.02" y2="218.44" width="0.1524" layer="91"/>
+<pinref part="3V" gate="G$1" pin="VOUT"/>
+<wire x1="40.64" y1="236.22" x2="50.8" y2="236.22" width="0.1524" layer="91"/>
+<junction x="50.8" y="236.22"/>
 </segment>
 <segment>
 <pinref part="MPU6050" gate="A" pin="1"/>
@@ -13763,11 +13762,10 @@ Distributor Buerklin, 11G810</description>
 <wire x1="43.18" y1="203.2" x2="50.8" y2="203.2" width="0.1524" layer="91"/>
 <wire x1="50.8" y1="203.2" x2="50.8" y2="205.74" width="0.1524" layer="91"/>
 <junction x="43.18" y="203.2"/>
-<pinref part="3V" gate="G$1" pin="VOUT"/>
-<wire x1="40.64" y1="236.22" x2="60.96" y2="236.22" width="0.1524" layer="91"/>
-<wire x1="60.96" y1="236.22" x2="60.96" y2="203.2" width="0.1524" layer="91"/>
 <wire x1="60.96" y1="203.2" x2="50.8" y2="203.2" width="0.1524" layer="91"/>
 <junction x="50.8" y="203.2"/>
+<pinref part="3V" gate="G$1" pin="GND/ADJ"/>
+<wire x1="25.4" y1="223.52" x2="25.4" y2="203.2" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="GND13" gate="1" pin="GND"/>
@@ -13818,11 +13816,8 @@ Distributor Buerklin, 11G810</description>
 <wire x1="38.1" y1="254" x2="45.72" y2="254" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="254" x2="45.72" y2="259.08" width="0.1524" layer="91"/>
 <junction x="38.1" y="254"/>
-<wire x1="45.72" y1="254" x2="55.88" y2="254" width="0.1524" layer="91"/>
-<junction x="45.72" y="254"/>
-<pinref part="5V" gate="G$1" pin="VOUT"/>
-<wire x1="40.64" y1="281.94" x2="55.88" y2="281.94" width="0.1524" layer="91"/>
-<wire x1="55.88" y1="254" x2="55.88" y2="281.94" width="0.1524" layer="91"/>
+<pinref part="5V" gate="G$1" pin="GND/ADJ"/>
+<wire x1="25.4" y1="269.24" x2="25.4" y2="254" width="0.1524" layer="91"/>
 </segment>
 <segment>
 <pinref part="WIFI" gate="G$1" pin="GND"/>
@@ -14300,12 +14295,13 @@ Distributor Buerklin, 11G810</description>
 <pinref part="C4" gate="G$1" pin="+"/>
 <wire x1="38.1" y1="269.24" x2="45.72" y2="269.24" width="0.1524" layer="91"/>
 <wire x1="45.72" y1="269.24" x2="45.72" y2="266.7" width="0.1524" layer="91"/>
-<junction x="38.1" y="269.24"/>
-<wire x1="45.72" y1="269.24" x2="45.72" y2="274.32" width="0.1524" layer="91"/>
+<wire x1="45.72" y1="269.24" x2="45.72" y2="281.94" width="0.1524" layer="91"/>
 <junction x="45.72" y="269.24"/>
 <pinref part="P+1" gate="1" pin="+5V"/>
-<pinref part="5V" gate="G$1" pin="GND/ADJ"/>
-<wire x1="38.1" y1="269.24" x2="25.4" y2="269.24" width="0.1524" layer="91"/>
+<pinref part="5V" gate="G$1" pin="VOUT"/>
+<wire x1="45.72" y1="281.94" x2="45.72" y2="289.56" width="0.1524" layer="91"/>
+<wire x1="40.64" y1="281.94" x2="45.72" y2="281.94" width="0.1524" layer="91"/>
+<junction x="45.72" y="281.94"/>
 </segment>
 <segment>
 <pinref part="TEENSY41" gate="G$1" pin="VIN"/>
