@@ -13525,6 +13525,7 @@ Distributor Buerklin, 11G810</description>
 <part name="LED_COM2" library="led" deviceset="LED" device="SML0805"/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
+<part name="SHARP" library="pinhead" deviceset="PINHD-1X3" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -13604,6 +13605,7 @@ Distributor Buerklin, 11G810</description>
 <instance part="LED_COM2" gate="G$1" x="134.62" y="38.1"/>
 <instance part="GND10" gate="1" x="124.46" y="12.7"/>
 <instance part="GND14" gate="1" x="134.62" y="12.7"/>
+<instance part="SHARP" gate="A" x="182.88" y="180.34"/>
 </instances>
 <busses>
 </busses>
@@ -13887,6 +13889,11 @@ Distributor Buerklin, 11G810</description>
 <pinref part="R13" gate="G$1" pin="1"/>
 <pinref part="GND14" gate="1" pin="GND"/>
 <wire x1="134.62" y1="20.32" x2="134.62" y2="15.24" width="0.1524" layer="91"/>
+</segment>
+<segment>
+<pinref part="SHARP" gate="A" pin="2"/>
+<wire x1="180.34" y1="180.34" x2="167.64" y2="180.34" width="0.1524" layer="91"/>
+<label x="167.64" y="180.34" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="INT" class="0">
@@ -14313,6 +14320,11 @@ Distributor Buerklin, 11G810</description>
 <wire x1="129.54" y1="172.72" x2="121.92" y2="172.72" width="0.1524" layer="91"/>
 <label x="121.92" y="172.72" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
+<segment>
+<pinref part="SHARP" gate="A" pin="3"/>
+<wire x1="180.34" y1="177.8" x2="167.64" y2="177.8" width="0.1524" layer="91"/>
+<label x="167.64" y="177.8" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="RXD" class="0">
 <segment>
@@ -14560,9 +14572,9 @@ Distributor Buerklin, 11G810</description>
 <label x="124.46" y="45.72" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 <segment>
-<pinref part="TEENSY41" gate="G$1" pin="31/A12"/>
-<wire x1="15.24" y1="96.52" x2="10.16" y2="96.52" width="0.1524" layer="91"/>
-<label x="10.16" y="96.52" size="1.016" layer="95" rot="R180" xref="yes"/>
+<pinref part="TEENSY41" gate="G$1" pin="30"/>
+<wire x1="15.24" y1="99.06" x2="10.16" y2="99.06" width="0.1524" layer="91"/>
+<label x="10.16" y="99.06" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="LED2" class="0">
@@ -14572,9 +14584,21 @@ Distributor Buerklin, 11G810</description>
 <label x="134.62" y="45.72" size="1.778" layer="95" rot="R90" xref="yes"/>
 </segment>
 <segment>
+<pinref part="TEENSY41" gate="G$1" pin="31/A12"/>
+<wire x1="15.24" y1="96.52" x2="10.16" y2="96.52" width="0.1524" layer="91"/>
+<label x="10.16" y="96.52" size="1.016" layer="95" rot="R180" xref="yes"/>
+</segment>
+</net>
+<net name="SENSOR" class="0">
+<segment>
 <pinref part="TEENSY41" gate="G$1" pin="32/A13"/>
 <wire x1="15.24" y1="93.98" x2="10.16" y2="93.98" width="0.1524" layer="91"/>
 <label x="10.16" y="93.98" size="1.016" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="SHARP" gate="A" pin="1"/>
+<wire x1="180.34" y1="182.88" x2="167.64" y2="182.88" width="0.1524" layer="91"/>
+<label x="167.64" y="182.88" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 </nets>
