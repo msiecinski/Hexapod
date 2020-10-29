@@ -14,7 +14,7 @@
         volatile double q2;
         volatile double q3;
     };
-    struct position                                      //before named as coordinates
+    struct position
     {
         volatile double x;
         volatile double y;
@@ -22,8 +22,9 @@
     };
     struct  hexapod
     {
-        angle angles;
-        position xyz;
+        angle angles;                                   //calculated angles
+        position xyz;                                   //set postion
+        position offset;                                //offset postion leg(when "no" ground)w
         volatile uint32_t duty[3];                      //duty for pwm
         volatile uint32_t delay;                        //delay value flag
     };
@@ -32,7 +33,7 @@
 
     //constants based on the robot dimensions 
     #define A1   (5)
-    #define A2   (7.5)
+    #define A2   (15)
     #define A3   (2)
     #define E    (2)
 
@@ -58,11 +59,11 @@
 #endif /* Global_defines_H_ */
 
 /*
-    Konwencje ogólne
-    -define z dużych liter,
-    -nazwy zmiennych - pierwszy człon mała litera,
-    -nazwy funkcji - każdy kolejny człon z dużej litery,
-    -pliki .hpp z dużej,
-    -pliki .cpp z małej,
-    -spacje przy przypisaniach wartości i porównaniach
+    Names convention
+    -defines with a capital letter,
+    -variable names - first "member" lowercase,
+    -functions names - every "name member" with a capital letter,
+    -files .hpp with a capital letter,
+    -files .cpp with a lowercase letter,
+    -spaces for value assignments and comparisons
 */
