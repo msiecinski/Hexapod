@@ -4,6 +4,7 @@
 
 
 extern std::array<hexapod, 6> hexapodControl;
+extern volatile int stepSize;
 volatile uint32_t delayFlag = 0;
 
 
@@ -77,7 +78,7 @@ void SlideHorizontal(int movement_r,int movement_l)
 
 	for(int k = 0; k < 6; k++)
     {
-        pos[k].xyz = hexapodControl[k].xyz; //need change olny xyz.x value
+        pos[k].xyz = hexapodControl[k].xyz; //copy actual position(xyz)
         pos[k].delay = 0;                   //clear all delay flags (for be sure)
     }
                            
@@ -117,12 +118,13 @@ void SlideHorizontal(int movement_r,int movement_l)
         {
             i=0;
         }
-        pos[0].xyz.x = hexapodControl[0].xyz.x - i;
-        pos[1].xyz.x = hexapodControl[1].xyz.x - i;
-        pos[2].xyz.x = hexapodControl[2].xyz.x - i;
-        pos[3].xyz.x = hexapodControl[3].xyz.x + j;
-        pos[4].xyz.x = hexapodControl[4].xyz.x + j;
-        pos[5].xyz.x = hexapodControl[5].xyz.x + j;
+        
+        RotateCordinate(0,pos[0].xyz,-i);
+        RotateCordinate(1,pos[1].xyz,-i);
+        RotateCordinate(2,pos[2].xyz,-i);
+        RotateCordinate(3,pos[3].xyz,j);
+        RotateCordinate(4,pos[4].xyz,j);
+        RotateCordinate(5,pos[5].xyz,j);
         pos[5].delay = 5;               //after last leg always delay
         for(int k = 0; k < 6; k++)
         {
@@ -150,11 +152,11 @@ void Move(movetype direction,int offset)
         TODO:
             Check ground
     */
-
     int posOffset[6];          //calculate offests depends on actual posiotn and move type(direction)
     int posOffsetTMP[6];
     hexapod setPosition[6];    //calculate step position for all legs
     int dX[6];                //diff between base leg[2] and all another legs 
+    int step;
   
     switch(direction)
     {
@@ -207,53 +209,60 @@ void Move(movetype direction,int offset)
     
     for(int i = 0; i<6; i++)
     {   
+         setPosition[i].delay = 0;          //init 0 value for delay 
+               
         //use for compress diff position (maybe bcs scan floor)
-        dX[i] = hexapodControl[i].xyz.x - hexapodControl[2].xyz.x;  
+        dX[i] =0;// hexapodControl[i].xyz.x - hexapodControl[2].xyz.x;  
         posOffset[i] -= dX[i];              
         posOffsetTMP[i] = posOffset[i];         //copy value for nextinterration
         if(i%2)
-            posOffset[i] *= (-posOffset[2]);      //3 on ground 
-    }
-    /*  
+            posOffset[i] = (-posOffset[2]);      //3 on ground 
+     }
+     /*  
         quantization of the movement
         first 3 legs move on thheground
         3 legs above the ground
     */
     for(int j=0; j<2; j++)
     {
-        //move up 3 legs
-        for(int i = j;  i<6; )
+        //move up slowly 3 legs
+        for(int k=1; k<=MOVEHEIGHT; k++)
         {
-            setPosition[i].xyz.x = hexapodControl[i].xyz.x;
-            setPosition[i].xyz.y = hexapodControl[i].xyz.y;
-            setPosition[i].xyz.z = hexapodControl[i].xyz.z+MOVEHEIGHT;//////!!!!!!!!!!!we will see value @future
-            i += 2;     //bcs 0-2-4 or 1-3-5 
+            for(int i = j;  i<6; )
+            {
+                setPosition[i].xyz.x = hexapodControl[i].xyz.x;
+                setPosition[i].xyz.y = hexapodControl[i].xyz.y;
+                setPosition[i].xyz.z = hexapodControl[i].xyz.z+1;
+                i += 2;     //bcs 0-2-4 or 1-3-5 
+            }
+            setPosition[4+j].delay = VERTICALMOVEDELAY;
+            SetThreeLegs(j,setPosition);
         }
-        setPosition[4+j].delay = 1;
-        SetThreeLegs(j,setPosition);
-
+    
         //now lets move
         while(posOffset[0+j] || posOffset[2+j] || posOffset[4+j])
         {
             for(int i = 0;  i<6; i++)
-            {
-                if(posOffset[i])
+            { 
+                if(posOffset[i]>0)
                 {
-                    setPosition[i].xyz.x = hexapodControl[i].xyz.x + 1;
+                    step = 1;
                     posOffset[i]--; 
                 }
                 else
                 {
                     if(posOffset[i]<0)
                     {
-                        setPosition[i].xyz.x = hexapodControl[i].xyz.x - 1;
+                        step = -1;
                         posOffset[i]++; 
                     }
-                    else  
-                        setPosition[i].xyz.x = hexapodControl[i].xyz.x;  //do nothing untill all posOffset[i]!-= 0;
+                    else 
+                    { 
+                        step = 0;  //do nothing untill all posOffset[i]!-= 0;
+                    }
                 }
-                setPosition[i].xyz.y = hexapodControl[i].xyz.y;
-                setPosition[i].xyz.z = hexapodControl[i].xyz.z;
+                setPosition[i].xyz= hexapodControl[i].xyz;      //copy actual position
+                RotateCordinate(i,setPosition[i].xyz,step);     //rotate step
            }
             //set delay
             setPosition[5].delay = 1;
@@ -266,11 +275,11 @@ void Move(movetype direction,int offset)
             {
                 setPosition[i].xyz.x = hexapodControl[i].xyz.x;
                 setPosition[i].xyz.y = hexapodControl[i].xyz.y;
-                setPosition[i].xyz.z = hexapodControl[i].xyz.z-k;
+                setPosition[i].xyz.z = hexapodControl[i].xyz.z-1;
                 i += 2;     //bcs 0-2-4 or 1-3-5 
             }
             //CheckGround() here is needed !!!!!!!!!!!!!!!!!
-            setPosition[4+j].delay = 1;
+            setPosition[4+j].delay = VERTICALMOVEDELAY;
             SetThreeLegs(j,setPosition);
         }
          for(int i = 0; i<6; i++)
@@ -278,11 +287,11 @@ void Move(movetype direction,int offset)
             if(i%2)
                 posOffset[i] = posOffsetTMP[i];
             else
-                posOffset[i] = posOffsetTMP[2];
+                posOffset[i] = -posOffsetTMP[i];
         }
-    }
+     }
     //TODO:check the ground!!!!!!!!!!!!!!!!!!
-}
+ }
 
 void TestSuppFunction(int legNum,int *posOffset,hexapod *setPosition)
 {
@@ -354,7 +363,7 @@ void MoveAtPlace(movetype direction,int offset)
                 setPosition[i].xyz.z = hexapodControl[i].xyz.z;
             }
         }
-        setPosition[5].delay = 1;
+        setPosition[5].delay = VERTICALMOVEDELAY;
         SetAllLegs(setPosition);
     }
 }

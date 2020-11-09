@@ -34,12 +34,12 @@
     //constants based on the robot dimensions 
     #define A1   (5)
     #define A2   (15)
-    #define A3   (2)
+    #define A3   (22)
     #define E    (2)
 
     #define CIRCLEVAL           2                       //diff ofset for turning
     #define BASEHEIGHT          (-5)
-    #define MOVEHEIGHT          3
+    #define MOVEHEIGHT          8
     #define STEPSIZE            3
     #define BASEWIDTH           10
 
@@ -49,12 +49,13 @@
     
     #define PWMTIMEBASE         5                       //time base for interrupts
     #define DELAYTIMEBASE       1000                    //time base for delay interrupts
-    #define DELAYCOUNTERMAXVAL  100                     //max value for delay_counter
+    #define DELAYCOUNTERMAXVAL  10                     //max value for delay_counter
        
+    #define VERTICALMOVEDELAY 2                       //delays for vertical legs move
      //constants for bool fucntions
     #define TRUE                1          
     #define FALSE               0
-
+    
 
 #endif /* Global_defines_H_ */
 
