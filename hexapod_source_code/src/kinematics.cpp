@@ -45,3 +45,32 @@ void AngleToDuty(hexapod &pos)
     pos.duty[2] = (pos.angles.q3<0) ? 100 : (pos.angles.q3>180) ? 500 : ((uint32_t)((pos.angles.q3*20/9)+100));
 }
 
+void RotateCordinate(int leg,position &pos,int offset)
+{
+    /*
+    Function using to rotate input offset
+    fi value depends on chosen leg, 
+    and base on robot mechanical build(servos base position)
+    input data:
+     y=0,x=offset, fi=0/45 or -45 deg,
+    xcos(fi)-ycsin(fi)
+    xsin(fi)+ycos(fi)
+    */
+    if(leg == 1 || leg == 2)
+    {
+        pos.x += offset;
+    }
+    else
+    {
+        if(leg == 0 || leg == 5)    //fi=+45 deg
+        {
+            pos.x += (offset*0.70710678118);    //xcos(fi)-ycsin(fi)
+            pos.y += (offset*0.70710678118);     //xsin(fi)+ycos(fi)
+        }
+        else    // leg == 3 || leg == 4//fi=-45 deg
+        {
+            pos.x += (offset*0.70710678118); 
+            pos.y -= (offset*0.70710678118);
+        }
+    }
+}
