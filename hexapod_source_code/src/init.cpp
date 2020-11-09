@@ -74,7 +74,7 @@ void DelayTimer(int time_us)
 
 void InterruptEnable(bool enable)
 { 
-    if(1==enable)
+    if(1 == enable)
     {
         interrupts();
     }
