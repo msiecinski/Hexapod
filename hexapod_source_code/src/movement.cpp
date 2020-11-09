@@ -367,3 +367,74 @@ void MoveAtPlace(movetype direction,int offset)
         SetAllLegs(setPosition);
     }
 }
+
+void Control(uint16_t data)
+{
+    /*
+        Api function for control robot
+    */
+    uint8_t skipDelay = 0;      //variable using for skiping delays
+
+    switch(data&0xFF)
+    {
+        case 0x1:
+            Move(forvard,stepSize);
+            break;
+        case 0x2:
+            Move(left,stepSize);
+            break;
+        case 0x3:
+            Move(forvardleft,stepSize);
+            break;
+        case 0x4:
+             Move(backward,stepSize);
+            break;
+        case 0x8:
+            Move(right,stepSize);
+            break;
+        case 0x9:
+            Move(forvardright,stepSize);
+            break;
+        case 0x10:
+            MoveAtPlace(up,1);
+            break;
+        case 0x20:
+            MoveAtPlace(wider,5);
+            break;
+        case 0x40:
+            MoveAtPlace(narrower,5);
+            break;
+        case 0x80:
+            MoveAtPlace(down,1);
+            break;
+        default:
+            skipDelay++;    //no matching value on both switch statement = skipDelays
+            break;  
+    }
+    
+    switch((data>>8)&0xFF)
+    {
+        case 0x0:
+            stepSize++;
+            break;
+        case 0x1:
+            /*TODO*/
+            //GyroControll(olny ps4 pad)
+            break;
+        case 0x2:
+            /*TODO*/
+            break;
+        case 0x4:
+            stepSize--;
+            break;
+        default:
+            skipDelay++;    //no matching value on both switch statement = skipDelays
+            break;
+    }
+    if(skipDelay != 2)
+    {
+        while(delayFlag);   //wait for clear after move
+        delayFlag=1;        //set delay should be not too big
+        while(delayFlag);
+    }
+}

@@ -40,7 +40,6 @@ uint64_t joystick_full_notify_mask = (uint64_t) - 1;
 int psAxis[64];
 uint32_t buttons;
 
-extern volatile int stepSize;
 
 void SetupPS4()
 {
@@ -71,63 +70,7 @@ void LoopPS4()
             digitalButton |= 0x1;
         joystick1.joystickType();
         joystick1.joystickDataClear();
-        ControlPS4(analogButton,digitalButton);
+        Control(analogButton|(digitalButton<<8));
     }
 }
 
-void ControlPS4(uint8_t analogButton,uint8_t digitalButton)
-{
-    switch(analogButton)
-    {
-        case 0x1:
-            Move(forvard,stepSize);
-            break;
-        case 0x2:
-            Move(left,stepSize);
-            break;
-        case 0x3:
-            Move(forvardleft,stepSize);
-            break;
-        case 0x4:
-             Move(backward,stepSize);
-            break;
-        case 0x8:
-            Move(right,stepSize);
-            break;
-        case 0x9:
-            Move(forvardright,stepSize);
-            break;
-        case 0x10:
-            MoveAtPlace(up,1);
-            break;
-        case 0x20:
-            MoveAtPlace(wider,5);
-            break;
-        case 0x40:
-            MoveAtPlace(narrower,5);
-            break;
-        case 0x80:
-            MoveAtPlace(down,1);
-            break;
-        default:
-            break;  
-    }
-    
-    switch(digitalButton)
-    {
-        case 0x0:
-            stepSize++;
-            break;
-        case 0x1:
-            /*TODO*/
-            break;
-        case 0x2:
-            /*TODO*/
-            break;
-        case 0x4:
-            stepSize--;
-            break;
-        default:
-            break;
-    }
-}

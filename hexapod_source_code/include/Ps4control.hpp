@@ -5,7 +5,6 @@
 
 void SetupPS4(void);
 void LoopPS4(void);
-void ControlPS4(uint8_t, uint8_t);
 
    
 #endif /* Ps4control_H_ */
