@@ -24,7 +24,7 @@
     {
         angle angles;                                   //calculated angles
         position xyz;                                   //set postion
-        position offset;                                //offset postion leg(when "no" ground)w
+        position offset;                                //offset postion leg(when "no" ground)
         volatile uint32_t duty[3];                      //duty for pwm
         volatile uint32_t delay;                        //delay value flag
     };
@@ -51,7 +51,7 @@
     #define DELAYTIMEBASE       1000                    //time base for delay interrupts
     #define DELAYCOUNTERMAXVAL  10                     //max value for delay_counter
        
-    #define VERTICALMOVEDELAY 2                       //delays for vertical legs move
+    #define VERTICALMOVEDELAY   2                       //delays for vertical legs move
      //constants for bool fucntions
     #define TRUE                1          
     #define FALSE               0
