@@ -45,7 +45,7 @@ void AngleToDuty(hexapod &pos)
     pos.duty[2] = (pos.angles.q3<0) ? 100 : (pos.angles.q3>180) ? 500 : ((uint32_t)((pos.angles.q3*20/9)+100));
 }
 
-void RotateCordinate(int leg,position &pos,int offset)
+void RotateCordinate(int leg,position &pos,int offsetX,int offsetY)
 {
     /*
     Function using to rotate input offset
@@ -58,19 +58,19 @@ void RotateCordinate(int leg,position &pos,int offset)
     */
     if(leg == 1 || leg == 2)
     {
-        pos.x += offset;
+        pos.x += offsetX;
     }
     else
     {
         if(leg == 0 || leg == 5)    //fi=+45 deg
         {
-            pos.x += (offset*0.70710678118);    //xcos(fi)-ycsin(fi)
-            pos.y += (offset*0.70710678118);     //xsin(fi)+ycos(fi)
+            pos.x += ((offsetX*0.70710678118) - (offsetY*70710678118));    //xcos(fi)-ycsin(fi)
+            pos.y += ((offsetX*0.70710678118) + (offsetY*70710678118));     //xsin(fi)+ycos(fi)
         }
         else    // leg == 3 || leg == 4//fi=-45 deg
         {
-            pos.x += (offset*0.70710678118); 
-            pos.y -= (offset*0.70710678118);
+            pos.x += ((offsetX*0.70710678118) + (offsetY*70710678118)); 
+            pos.y += ((-offsetX*0.70710678118) + (offsetY*70710678118));;
         }
     }
 }
