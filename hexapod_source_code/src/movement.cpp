@@ -137,8 +137,17 @@ void SlideHorizontal(int movement_r,int movement_l)
 }
 
 _Bool CheckGround(int leg)
-{   
+{   //already not use
     return FALSE;
+    /*
+       Funtions using to read pins connect to limit switch
+       each pin(limit switch) corresponds to one leg
+       funtion return  TRUE(1) when "no ground"
+       return "False(0)" when |"is ground"
+       Debouncer is not nessesery bcs before every read is delay afer move
+    */
+    int SensorTab[] = { SENSOR_1, SENSOR_2, SENSOR_3, SENSOR_4, SENSOR_5, SENSOR_6 };
+    return((_Bool)digitalRead(SensorTab[leg]));
 }
 
 void Move(movetype direction,int offset)
