@@ -32,7 +32,16 @@ void SetupLeg(void)
     pinMode(LEG1_1, OUTPUT);
     pinMode(LEG1_2, OUTPUT);
     pinMode(LEG1_3, OUTPUT);
-    
+}
+
+void SetupLegSensor(void)
+{
+    pinMode(SENSOR_1, INPUT_PULLUP);
+    pinMode(SENSOR_2, INPUT_PULLUP);
+    pinMode(SENSOR_3, INPUT_PULLUP);
+    pinMode(SENSOR_4, INPUT_PULLUP);
+    pinMode(SENSOR_5, INPUT_PULLUP);
+    pinMode(SENSOR_6, INPUT_PULLUP);
 }
 
 void SetupTimer3(int time_us)

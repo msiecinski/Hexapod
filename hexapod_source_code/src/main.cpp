@@ -27,6 +27,7 @@ void setup(void)
     SetupTimer3(PWMTIMEBASE);     //interupt every (TimeBase) us
     DelayTimer(DELAYTIMEBASE);    //interupt using for generate delays
     SetupLeg();                   //setup pins using to generate pwm signal for each leg joint
+    SetupLegSensor();             //setup pins using to ground check
     gyroStatus = SetupMPU6050();  //setup gyroscope(using in future)
     //SetupPS4();
     for(int i=0;i<6;i++)

@@ -25,4 +25,11 @@
 #define LEG6_2 (34)
 #define LEG6_3 (33)
 
+#define SENSOR_1 (21)
+#define SENSOR_2 (20)
+#define SENSOR_3 (17)
+#define SENSOR_4 (16)
+#define SENSOR_5 (15)
+#define SENSOR_6 (14)
+
 #endif /* Leg_H_ */
