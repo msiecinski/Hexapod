@@ -8,7 +8,7 @@ extern volatile int stepSize;
 volatile uint32_t delayFlag = 0;
 
 
-_Bool SetPosition(int leg, hexapod &pos)
+_Bool SetPosition(int leg, const hexapod &pos)
 {
     /*
         Function SetPositions used to set position selected robot leg
@@ -31,7 +31,7 @@ _Bool SetPosition(int leg, hexapod &pos)
     return TRUE;
 }
 
-_Bool SetLeg(int leg,hexapod &pos)
+_Bool SetLeg(int leg,const hexapod &pos)
 {
      return SetPosition(leg,pos);
 }
@@ -72,9 +72,8 @@ void SlideHorizontal(int movement_r,int movement_l)
         sings plus/minus 1 can be changed !!!!!!!!!!!!!!!!!!!!!!!!!!!!
     */
 
-	int i = 0;
-	int j = 0;
-    hexapod  pos[6];
+	int i ,j;
+	hexapod  pos[6];
 	_Bool SligerFlag = 1;
 
 	for(int k = 0; k < 6; k++)
