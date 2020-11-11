@@ -56,7 +56,7 @@ void RotateCordinate(int leg,position &pos,int offsetX,int offsetY)
     xcos(fi)-ycsin(fi)
     xsin(fi)+ycos(fi)
     */
-    if(leg == 1 || leg == 2)
+    if(leg == 1 || leg == 2) //fi = 0 deg 
     {
         pos.x += offsetX;
     }
