@@ -137,8 +137,7 @@ void SlideHorizontal(int movement_r,int movement_l)
 }
 
 _Bool CheckGround(int leg)
-{   //already not use
-    return FALSE;
+{   
     /*
        Funtions using to read pins connect to limit switch
        each pin(limit switch) corresponds to one leg
@@ -278,12 +277,14 @@ void Move(movetype direction,int offset)
         {
             for(int i = j;  i<6; )
             {
-                if(CheckGround(i))
+                if(FALSE == CheckGround(i))
                 {   //if "found" ground stop move down leg
                     hexapodControl[i].offset.z += 1;
-                    continue;
                 }
-                setPosition[i].xyz.z = hexapodControl[i].xyz.z-1;
+                else
+                {
+                    setPosition[i].xyz.z = hexapodControl[i].xyz.z-1;
+                }
                 i += 2;     //bcs 0-2-4 or 1-3-5 
             }
             setPosition[4+j].delay = VERTICALMOVEDELAY;
@@ -297,15 +298,18 @@ void Move(movetype direction,int offset)
                 posOffset[i] = -posOffsetTMP[i];
         }
         /*for(int i = j; i<6; )
-        {
+        {   //already olny move down Z if no leg
             hexapodControl[i].offset.x = 0;
-            if(TRUE == CheckGround(i))
+            while(TRUE == CheckGround(i))
             {
-                continue;
-            }
-            else
-            {
-                ;    
+                setPosition[i].xyz.z = hexapodControl[i].xyz.z-1;
+                setPosition[i].delay = VERTICALMOVEDELAY; 
+                hexapodControl[i].offset.z -= 1;
+                SetLeg(i,setPosition[i]);
+                if(hexapodControl[i].offset.z < -5)
+                {
+                    ; //still no ground so do something diffrent
+                }  
             }
             i += 2;
         }*/
