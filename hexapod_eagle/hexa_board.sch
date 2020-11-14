@@ -10436,144 +10436,6 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <rectangle x1="0.889" y1="-2.921" x2="1.651" y2="-1.905" layer="21"/>
 <rectangle x1="3.429" y1="-2.921" x2="4.191" y2="-1.905" layer="21"/>
 </package>
-<package name="2X06">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-7.62" y1="-1.905" x2="-6.985" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="-5.715" y1="-2.54" x2="-5.08" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="-5.08" y1="-1.905" x2="-4.445" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="-3.175" y1="-2.54" x2="-2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="-1.905" x2="-1.905" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="-2.54" x2="0" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="0" y1="-1.905" x2="0.635" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="1.905" y1="-2.54" x2="2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="-1.905" x2="3.175" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="4.445" y1="-2.54" x2="5.08" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="-7.62" y1="-1.905" x2="-7.62" y2="1.905" width="0.1524" layer="21"/>
-<wire x1="-7.62" y1="1.905" x2="-6.985" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="-6.985" y1="2.54" x2="-5.715" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="-5.715" y1="2.54" x2="-5.08" y2="1.905" width="0.1524" layer="21"/>
-<wire x1="-5.08" y1="1.905" x2="-4.445" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="-4.445" y1="2.54" x2="-3.175" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="-3.175" y1="2.54" x2="-2.54" y2="1.905" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="1.905" x2="-1.905" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="-1.905" y1="2.54" x2="-0.635" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="-0.635" y1="2.54" x2="0" y2="1.905" width="0.1524" layer="21"/>
-<wire x1="0" y1="1.905" x2="0.635" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="2.54" x2="1.905" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="1.905" y1="2.54" x2="2.54" y2="1.905" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="1.905" x2="3.175" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="3.175" y1="2.54" x2="4.445" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="4.445" y1="2.54" x2="5.08" y2="1.905" width="0.1524" layer="21"/>
-<wire x1="-5.08" y1="1.905" x2="-5.08" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="1.905" x2="-2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="0" y1="1.905" x2="0" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="1.905" x2="2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="5.08" y1="1.905" x2="5.08" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="3.175" y1="-2.54" x2="4.445" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="0.635" y1="-2.54" x2="1.905" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="-1.905" y1="-2.54" x2="-0.635" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="-4.445" y1="-2.54" x2="-3.175" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="-6.985" y1="-2.54" x2="-5.715" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="5.08" y1="-1.905" x2="5.715" y2="-2.54" width="0.1524" layer="21"/>
-<wire x1="6.985" y1="-2.54" x2="7.62" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="5.08" y1="1.905" x2="5.715" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="5.715" y1="2.54" x2="6.985" y2="2.54" width="0.1524" layer="21"/>
-<wire x1="6.985" y1="2.54" x2="7.62" y2="1.905" width="0.1524" layer="21"/>
-<wire x1="7.62" y1="1.905" x2="7.62" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="5.715" y1="-2.54" x2="6.985" y2="-2.54" width="0.1524" layer="21"/>
-<pad name="1" x="-6.35" y="-1.27" drill="1.016" shape="octagon"/>
-<pad name="2" x="-6.35" y="1.27" drill="1.016" shape="octagon"/>
-<pad name="3" x="-3.81" y="-1.27" drill="1.016" shape="octagon"/>
-<pad name="4" x="-3.81" y="1.27" drill="1.016" shape="octagon"/>
-<pad name="5" x="-1.27" y="-1.27" drill="1.016" shape="octagon"/>
-<pad name="6" x="-1.27" y="1.27" drill="1.016" shape="octagon"/>
-<pad name="7" x="1.27" y="-1.27" drill="1.016" shape="octagon"/>
-<pad name="8" x="1.27" y="1.27" drill="1.016" shape="octagon"/>
-<pad name="9" x="3.81" y="-1.27" drill="1.016" shape="octagon"/>
-<pad name="10" x="3.81" y="1.27" drill="1.016" shape="octagon"/>
-<pad name="11" x="6.35" y="-1.27" drill="1.016" shape="octagon"/>
-<pad name="12" x="6.35" y="1.27" drill="1.016" shape="octagon"/>
-<text x="-7.62" y="3.175" size="1.27" layer="25" ratio="10">&gt;NAME</text>
-<text x="-7.62" y="-4.445" size="1.27" layer="27">&gt;VALUE</text>
-<rectangle x1="-6.604" y1="-1.524" x2="-6.096" y2="-1.016" layer="51"/>
-<rectangle x1="-6.604" y1="1.016" x2="-6.096" y2="1.524" layer="51"/>
-<rectangle x1="-4.064" y1="1.016" x2="-3.556" y2="1.524" layer="51"/>
-<rectangle x1="-4.064" y1="-1.524" x2="-3.556" y2="-1.016" layer="51"/>
-<rectangle x1="-1.524" y1="1.016" x2="-1.016" y2="1.524" layer="51"/>
-<rectangle x1="-1.524" y1="-1.524" x2="-1.016" y2="-1.016" layer="51"/>
-<rectangle x1="1.016" y1="1.016" x2="1.524" y2="1.524" layer="51"/>
-<rectangle x1="3.556" y1="1.016" x2="4.064" y2="1.524" layer="51"/>
-<rectangle x1="1.016" y1="-1.524" x2="1.524" y2="-1.016" layer="51"/>
-<rectangle x1="3.556" y1="-1.524" x2="4.064" y2="-1.016" layer="51"/>
-<rectangle x1="6.096" y1="1.016" x2="6.604" y2="1.524" layer="51"/>
-<rectangle x1="6.096" y1="-1.524" x2="6.604" y2="-1.016" layer="51"/>
-</package>
-<package name="2X06/90">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<wire x1="-7.62" y1="-1.905" x2="-5.08" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="-5.08" y1="-1.905" x2="-5.08" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-5.08" y1="0.635" x2="-7.62" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-7.62" y1="0.635" x2="-7.62" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="-6.35" y1="6.985" x2="-6.35" y2="1.27" width="0.762" layer="21"/>
-<wire x1="-5.08" y1="-1.905" x2="-2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="-1.905" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-2.54" y1="0.635" x2="-5.08" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-3.81" y1="6.985" x2="-3.81" y2="1.27" width="0.762" layer="21"/>
-<wire x1="-2.54" y1="-1.905" x2="0" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="0" y1="-1.905" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="0" y1="0.635" x2="-2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="-1.27" y1="6.985" x2="-1.27" y2="1.27" width="0.762" layer="21"/>
-<wire x1="0" y1="-1.905" x2="2.54" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="-1.905" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="2.54" y1="0.635" x2="0" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="1.27" y1="6.985" x2="1.27" y2="1.27" width="0.762" layer="21"/>
-<wire x1="2.54" y1="-1.905" x2="5.08" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="5.08" y1="-1.905" x2="5.08" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="5.08" y1="0.635" x2="2.54" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="3.81" y1="6.985" x2="3.81" y2="1.27" width="0.762" layer="21"/>
-<wire x1="5.08" y1="-1.905" x2="7.62" y2="-1.905" width="0.1524" layer="21"/>
-<wire x1="7.62" y1="-1.905" x2="7.62" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="7.62" y1="0.635" x2="5.08" y2="0.635" width="0.1524" layer="21"/>
-<wire x1="6.35" y1="6.985" x2="6.35" y2="1.27" width="0.762" layer="21"/>
-<pad name="2" x="-6.35" y="-3.81" drill="1.016" shape="octagon"/>
-<pad name="4" x="-3.81" y="-3.81" drill="1.016" shape="octagon"/>
-<pad name="6" x="-1.27" y="-3.81" drill="1.016" shape="octagon"/>
-<pad name="8" x="1.27" y="-3.81" drill="1.016" shape="octagon"/>
-<pad name="10" x="3.81" y="-3.81" drill="1.016" shape="octagon"/>
-<pad name="12" x="6.35" y="-3.81" drill="1.016" shape="octagon"/>
-<pad name="1" x="-6.35" y="-6.35" drill="1.016" shape="octagon"/>
-<pad name="3" x="-3.81" y="-6.35" drill="1.016" shape="octagon"/>
-<pad name="5" x="-1.27" y="-6.35" drill="1.016" shape="octagon"/>
-<pad name="7" x="1.27" y="-6.35" drill="1.016" shape="octagon"/>
-<pad name="9" x="3.81" y="-6.35" drill="1.016" shape="octagon"/>
-<pad name="11" x="6.35" y="-6.35" drill="1.016" shape="octagon"/>
-<text x="-8.255" y="-3.81" size="1.27" layer="25" ratio="10" rot="R90">&gt;NAME</text>
-<text x="9.525" y="-3.81" size="1.27" layer="27" rot="R90">&gt;VALUE</text>
-<rectangle x1="-6.731" y1="0.635" x2="-5.969" y2="1.143" layer="21"/>
-<rectangle x1="-4.191" y1="0.635" x2="-3.429" y2="1.143" layer="21"/>
-<rectangle x1="-1.651" y1="0.635" x2="-0.889" y2="1.143" layer="21"/>
-<rectangle x1="0.889" y1="0.635" x2="1.651" y2="1.143" layer="21"/>
-<rectangle x1="3.429" y1="0.635" x2="4.191" y2="1.143" layer="21"/>
-<rectangle x1="5.969" y1="0.635" x2="6.731" y2="1.143" layer="21"/>
-<rectangle x1="-6.731" y1="-2.921" x2="-5.969" y2="-1.905" layer="21"/>
-<rectangle x1="-4.191" y1="-2.921" x2="-3.429" y2="-1.905" layer="21"/>
-<rectangle x1="-6.731" y1="-5.461" x2="-5.969" y2="-4.699" layer="21"/>
-<rectangle x1="-6.731" y1="-4.699" x2="-5.969" y2="-2.921" layer="51"/>
-<rectangle x1="-4.191" y1="-4.699" x2="-3.429" y2="-2.921" layer="51"/>
-<rectangle x1="-4.191" y1="-5.461" x2="-3.429" y2="-4.699" layer="21"/>
-<rectangle x1="-1.651" y1="-2.921" x2="-0.889" y2="-1.905" layer="21"/>
-<rectangle x1="0.889" y1="-2.921" x2="1.651" y2="-1.905" layer="21"/>
-<rectangle x1="-1.651" y1="-5.461" x2="-0.889" y2="-4.699" layer="21"/>
-<rectangle x1="-1.651" y1="-4.699" x2="-0.889" y2="-2.921" layer="51"/>
-<rectangle x1="0.889" y1="-4.699" x2="1.651" y2="-2.921" layer="51"/>
-<rectangle x1="0.889" y1="-5.461" x2="1.651" y2="-4.699" layer="21"/>
-<rectangle x1="3.429" y1="-2.921" x2="4.191" y2="-1.905" layer="21"/>
-<rectangle x1="5.969" y1="-2.921" x2="6.731" y2="-1.905" layer="21"/>
-<rectangle x1="3.429" y1="-5.461" x2="4.191" y2="-4.699" layer="21"/>
-<rectangle x1="3.429" y1="-4.699" x2="4.191" y2="-2.921" layer="51"/>
-<rectangle x1="5.969" y1="-4.699" x2="6.731" y2="-2.921" layer="51"/>
-<rectangle x1="5.969" y1="-5.461" x2="6.731" y2="-4.699" layer="21"/>
-</package>
 </packages>
 <symbols>
 <symbol name="PINH2X3">
@@ -10625,26 +10487,6 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <pin name="2" x="-2.54" y="2.54" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="3" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
 <pin name="4" x="-2.54" y="-2.54" visible="pad" length="short" direction="pas" function="dot"/>
-</symbol>
-<symbol name="PINH2X6">
-<wire x1="-6.35" y1="-10.16" x2="8.89" y2="-10.16" width="0.4064" layer="94"/>
-<wire x1="8.89" y1="-10.16" x2="8.89" y2="7.62" width="0.4064" layer="94"/>
-<wire x1="8.89" y1="7.62" x2="-6.35" y2="7.62" width="0.4064" layer="94"/>
-<wire x1="-6.35" y1="7.62" x2="-6.35" y2="-10.16" width="0.4064" layer="94"/>
-<text x="-6.35" y="8.255" size="1.778" layer="95">&gt;NAME</text>
-<text x="-6.35" y="-12.7" size="1.778" layer="96">&gt;VALUE</text>
-<pin name="1" x="-2.54" y="5.08" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="2" x="5.08" y="5.08" visible="pad" length="short" direction="pas" function="dot" rot="R180"/>
-<pin name="3" x="-2.54" y="2.54" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="4" x="5.08" y="2.54" visible="pad" length="short" direction="pas" function="dot" rot="R180"/>
-<pin name="5" x="-2.54" y="0" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="6" x="5.08" y="0" visible="pad" length="short" direction="pas" function="dot" rot="R180"/>
-<pin name="7" x="-2.54" y="-2.54" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="8" x="5.08" y="-2.54" visible="pad" length="short" direction="pas" function="dot" rot="R180"/>
-<pin name="9" x="-2.54" y="-5.08" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="10" x="5.08" y="-5.08" visible="pad" length="short" direction="pas" function="dot" rot="R180"/>
-<pin name="11" x="-2.54" y="-7.62" visible="pad" length="short" direction="pas" function="dot"/>
-<pin name="12" x="5.08" y="-7.62" visible="pad" length="short" direction="pas" function="dot" rot="R180"/>
 </symbol>
 </symbols>
 <devicesets>
@@ -10777,52 +10619,6 @@ Source: http://products.nichicon.co.jp/en/pdf/XJA043/e-ud.pdf</description>
 <connect gate="A" pin="2" pad="2"/>
 <connect gate="A" pin="3" pad="3"/>
 <connect gate="A" pin="4" pad="4"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-</devices>
-</deviceset>
-<deviceset name="PINHD-2X6" prefix="JP" uservalue="yes">
-<description>&lt;b&gt;PIN HEADER&lt;/b&gt;</description>
-<gates>
-<gate name="A" symbol="PINH2X6" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="2X06">
-<connects>
-<connect gate="A" pin="1" pad="1"/>
-<connect gate="A" pin="10" pad="10"/>
-<connect gate="A" pin="11" pad="11"/>
-<connect gate="A" pin="12" pad="12"/>
-<connect gate="A" pin="2" pad="2"/>
-<connect gate="A" pin="3" pad="3"/>
-<connect gate="A" pin="4" pad="4"/>
-<connect gate="A" pin="5" pad="5"/>
-<connect gate="A" pin="6" pad="6"/>
-<connect gate="A" pin="7" pad="7"/>
-<connect gate="A" pin="8" pad="8"/>
-<connect gate="A" pin="9" pad="9"/>
-</connects>
-<technologies>
-<technology name=""/>
-</technologies>
-</device>
-<device name="/90" package="2X06/90">
-<connects>
-<connect gate="A" pin="1" pad="1"/>
-<connect gate="A" pin="10" pad="10"/>
-<connect gate="A" pin="11" pad="11"/>
-<connect gate="A" pin="12" pad="12"/>
-<connect gate="A" pin="2" pad="2"/>
-<connect gate="A" pin="3" pad="3"/>
-<connect gate="A" pin="4" pad="4"/>
-<connect gate="A" pin="5" pad="5"/>
-<connect gate="A" pin="6" pad="6"/>
-<connect gate="A" pin="7" pad="7"/>
-<connect gate="A" pin="8" pad="8"/>
-<connect gate="A" pin="9" pad="9"/>
 </connects>
 <technologies>
 <technology name=""/>
@@ -12771,97 +12567,6 @@ Source: www.kingbright.com</description>
 </deviceset>
 </devicesets>
 </library>
-<library name="SparkFun-RF">
-<description>&lt;h3&gt;SparkFun RF, WiFi, Cellular, and Bluetooth&lt;/h3&gt;
-In this library you'll find things that send or receive RF-- cellular modules, Bluetooth, WiFi, etc.
-&lt;br&gt;
-&lt;br&gt;
-We've spent an enormous amount of time creating and checking these footprints and parts, but it is &lt;b&gt; the end user's responsibility&lt;/b&gt; to ensure correctness and suitablity for a given componet or application. 
-&lt;br&gt;
-&lt;br&gt;If you enjoy using this library, please buy one of our products at &lt;a href=" www.sparkfun.com"&gt;SparkFun.com&lt;/a&gt;.
-&lt;br&gt;
-&lt;br&gt;
-&lt;b&gt;Licensing:&lt;/b&gt; Creative Commons ShareAlike 4.0 International - https://creativecommons.org/licenses/by-sa/4.0/ 
-&lt;br&gt;
-&lt;br&gt;
-You are welcome to use this library for commercial purposes. For attribution, we ask that when you begin to sell your device using our footprint, you email us with a link to the product being sold. We want bragging rights that we helped (in a very small part) to create your 8th world wonder. We would like the opportunity to feature your device on our homepage.</description>
-<packages>
-<package name="ESP8266_ESP-01">
-<description>&lt;h3&gt;ESP8266 ESP-01 Module&lt;/h3&gt;</description>
-<pad name="1" x="-3.81" y="-11.13" drill="1.016" diameter="1.9304" rot="R90"/>
-<pad name="2" x="-1.27" y="-11.13" drill="1.016" diameter="1.9304" rot="R90"/>
-<pad name="3" x="1.27" y="-11.13" drill="1.016" diameter="1.9304" rot="R90"/>
-<pad name="4" x="3.81" y="-11.13" drill="1.016" diameter="1.9304" rot="R90"/>
-<pad name="5" x="3.81" y="-8.59" drill="1.016" diameter="1.9304" rot="R90"/>
-<pad name="6" x="1.27" y="-8.59" drill="1.016" diameter="1.9304" rot="R90"/>
-<pad name="7" x="-1.27" y="-8.59" drill="1.016" diameter="1.9304" rot="R90"/>
-<pad name="8" x="-3.81" y="-8.59" drill="1.016" diameter="1.9304" rot="R90"/>
-<text x="-0.0048" y="-12.7136" size="0.6096" layer="25" ratio="20" align="top-center">&gt;NAME</text>
-<text x="0" y="0" size="0.6096" layer="27" ratio="20" align="center">&gt;VALUE</text>
-<wire x1="-7.15" y1="-12.4" x2="-7.15" y2="12.4" width="0.0254" layer="51"/>
-<wire x1="-7.15" y1="12.4" x2="7.15" y2="12.4" width="0.0254" layer="51"/>
-<wire x1="7.15" y1="12.4" x2="7.15" y2="-12.4" width="0.0254" layer="51"/>
-<wire x1="7.15" y1="-12.4" x2="-7.15" y2="-12.4" width="0.0254" layer="51"/>
-<wire x1="-7.2516" y1="-12.5016" x2="-7.2516" y2="12.5016" width="0.2032" layer="21"/>
-<wire x1="-7.2516" y1="12.5016" x2="7.2516" y2="12.5016" width="0.2032" layer="21"/>
-<wire x1="7.2516" y1="12.5016" x2="7.2516" y2="-12.5016" width="0.2032" layer="21"/>
-<wire x1="7.2516" y1="-12.5016" x2="-7.2516" y2="-12.5016" width="0.2032" layer="21"/>
-</package>
-</packages>
-<symbols>
-<symbol name="ESP8266_ESP-01">
-<description>&lt;h3&gt;ESP8266 ESP-01 Module&lt;/h3&gt;
-ESP8266 WiFi module pre-programmed with an AT command interface.</description>
-<pin name="GND" x="12.7" y="5.08" length="short" rot="R180"/>
-<pin name="GPIO2" x="12.7" y="2.54" length="short" rot="R180"/>
-<pin name="GPIO0" x="12.7" y="0" length="short" rot="R180"/>
-<pin name="RXD" x="12.7" y="-2.54" length="short" rot="R180"/>
-<pin name="VCC" x="-12.7" y="-2.54" length="short"/>
-<pin name="RST" x="-12.7" y="0" length="short"/>
-<pin name="CH_PD" x="-12.7" y="2.54" length="short"/>
-<pin name="TXD" x="-12.7" y="5.08" length="short"/>
-<text x="-10.16" y="7.874" size="1.778" layer="95">&gt;NAME</text>
-<text x="-10.16" y="-5.334" size="1.778" layer="96" rot="MR180">&gt;VALUE</text>
-<wire x1="10.16" y1="7.62" x2="10.16" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="10.16" y1="-5.08" x2="-10.16" y2="-5.08" width="0.254" layer="94"/>
-<wire x1="-10.16" y1="-5.08" x2="-10.16" y2="7.62" width="0.254" layer="94"/>
-<wire x1="-10.16" y1="7.62" x2="10.16" y2="7.62" width="0.254" layer="94"/>
-</symbol>
-</symbols>
-<devicesets>
-<deviceset name="ESP8266_ESP-01" prefix="U">
-<description>&lt;h3&gt;ESP8266 ESP-01 Module&lt;/h3&gt;
-
-&lt;p&gt;The ESP8266 WiFi Module is a self contained SOC with integrated TCP/IP protocol stack that can give any microcontroller access to your WiFi network. The ESP8266 is capable of either hosting an application or offloading all Wi-Fi networking functions from another application processor. Each ESP8266 module comes pre-programmed with an AT command set firmware, meaning, you can simply hook this up to your Arduino device and get about as much WiFi-ability as a WiFi Shield offers (and that’s just out of the box)! The ESP8266 module is an extremely cost effective board with a huge, and ever growing, community.&lt;/p&gt;
-
-&lt;p&gt;This module has a powerful enough on-board processing and storage capability that allows it to be integrated with the sensors and other application specific devices through its GPIOs with minimal development up-front and minimal loading during runtime. Its high degree of on-chip integration allows for minimal external circuitry, including the front-end module, is designed to occupy minimal PCB area. The ESP8266 supports APSD for VoIP applications and Bluetooth co-existance interfaces, it contains a self-calibrated RF allowing it to work under all operating conditions, and requires no external RF parts.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=https://www.sparkfun.com/products/13678&gt;SparkFun Product Page&lt;/a&gt;</description>
-<gates>
-<gate name="G$1" symbol="ESP8266_ESP-01" x="0" y="0"/>
-</gates>
-<devices>
-<device name="" package="ESP8266_ESP-01">
-<connects>
-<connect gate="G$1" pin="CH_PD" pad="2"/>
-<connect gate="G$1" pin="GND" pad="8"/>
-<connect gate="G$1" pin="GPIO0" pad="6"/>
-<connect gate="G$1" pin="GPIO2" pad="7"/>
-<connect gate="G$1" pin="RST" pad="3"/>
-<connect gate="G$1" pin="RXD" pad="5"/>
-<connect gate="G$1" pin="TXD" pad="1"/>
-<connect gate="G$1" pin="VCC" pad="4"/>
-</connects>
-<technologies>
-<technology name="">
-<attribute name="SF_ID" value="WRL-13678"/>
-</technology>
-</technologies>
-</device>
-</devices>
-</deviceset>
-</devicesets>
-</library>
 <library name="holes">
 <description>&lt;b&gt;Mounting Holes and Pads&lt;/b&gt;&lt;p&gt;
 &lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
@@ -13446,6 +13151,89 @@ Distributor Buerklin, 11G810</description>
 </deviceset>
 </devicesets>
 </library>
+<library name="con-phoenix-254">
+<description>&lt;b&gt;Phoenix Connectors&lt;/b&gt;&lt;p&gt;
+Grid 2.54 mm&lt;p&gt;
+&lt;author&gt;Created by librarian@cadsoft.de&lt;/author&gt;</description>
+<packages>
+<package name="6POL254">
+<description>&lt;b&gt;PHOENIX CONNECTOR&lt;/b&gt;</description>
+<wire x1="-7.75" y1="-1.45" x2="7.75" y2="-1.45" width="0.254" layer="21"/>
+<wire x1="7.75" y1="-1.45" x2="7.75" y2="1.45" width="0.254" layer="21"/>
+<wire x1="7.75" y1="1.45" x2="-7.75" y2="1.45" width="0.254" layer="21"/>
+<wire x1="-7.75" y1="1.45" x2="-7.75" y2="-1.45" width="0.254" layer="21"/>
+<wire x1="-7.64" y1="1.1" x2="7.64" y2="1.1" width="0.1524" layer="21"/>
+<wire x1="-6.985" y1="-0.508" x2="-5.842" y2="0.635" width="0.1524" layer="51"/>
+<wire x1="-4.572" y1="-0.254" x2="-3.048" y2="0.127" width="0.1524" layer="51"/>
+<wire x1="-1.778" y1="0.635" x2="-0.762" y2="-0.635" width="0.1524" layer="51"/>
+<wire x1="0.508" y1="0.381" x2="2.032" y2="-0.381" width="0.1524" layer="51"/>
+<wire x1="3.302" y1="0.635" x2="4.318" y2="-0.635" width="0.1524" layer="51"/>
+<wire x1="5.588" y1="0.381" x2="7.112" y2="-0.381" width="0.1524" layer="51"/>
+<circle x="-6.35" y="0" radius="0.889" width="0.1524" layer="51"/>
+<circle x="-3.81" y="0" radius="0.889" width="0.1524" layer="51"/>
+<circle x="-1.27" y="0" radius="0.889" width="0.1524" layer="51"/>
+<circle x="1.27" y="0" radius="0.889" width="0.1524" layer="51"/>
+<circle x="3.81" y="0" radius="0.889" width="0.1524" layer="51"/>
+<circle x="6.35" y="0" radius="0.889" width="0.1524" layer="51"/>
+<pad name="1" x="-6.35" y="0" drill="1.2" diameter="1.778" shape="long" rot="R90"/>
+<pad name="2" x="-3.81" y="0" drill="1.2" diameter="1.778" shape="long" rot="R90"/>
+<pad name="3" x="-1.27" y="0" drill="1.2" diameter="1.778" shape="long" rot="R90"/>
+<pad name="4" x="1.27" y="0" drill="1.2" diameter="1.778" shape="long" rot="R90"/>
+<pad name="5" x="3.81" y="0" drill="1.2" diameter="1.778" shape="long" rot="R90"/>
+<pad name="6" x="6.35" y="0" drill="1.2" diameter="1.778" shape="long" rot="R90"/>
+<text x="-7.874" y="1.778" size="1.27" layer="25">&gt;NAME</text>
+<text x="-7.874" y="-3.048" size="1.27" layer="27">&gt;VALUE</text>
+</package>
+</packages>
+<symbols>
+<symbol name="SKB">
+<wire x1="2.032" y1="0.762" x2="0.508" y2="-0.762" width="0.254" layer="94"/>
+<circle x="1.27" y="0" radius="1.27" width="0.254" layer="94"/>
+<text x="3.556" y="-0.635" size="1.778" layer="95">&gt;NAME</text>
+<pin name="1" x="-2.54" y="0" visible="pad" length="short" direction="pas"/>
+</symbol>
+<symbol name="SKBV">
+<wire x1="2.032" y1="0.762" x2="0.508" y2="-0.762" width="0.254" layer="94"/>
+<circle x="1.27" y="0" radius="1.27" width="0.254" layer="94"/>
+<text x="3.556" y="-0.635" size="1.778" layer="95">&gt;NAME</text>
+<text x="-1.016" y="-3.302" size="1.778" layer="96">&gt;VALUE</text>
+<pin name="1" x="-2.54" y="0" visible="pad" length="short" direction="pas"/>
+</symbol>
+</symbols>
+<devicesets>
+<deviceset name="MPT6" prefix="X" uservalue="yes">
+<description>&lt;b&gt;PHOENIX CONNECTOR&lt;/b&gt;</description>
+<gates>
+<gate name="-1" symbol="SKB" x="0" y="10.16" addlevel="always"/>
+<gate name="-2" symbol="SKB" x="0" y="5.08" addlevel="always"/>
+<gate name="-3" symbol="SKB" x="0" y="0" addlevel="always"/>
+<gate name="-4" symbol="SKB" x="0" y="-5.08" addlevel="always"/>
+<gate name="-5" symbol="SKB" x="0" y="-10.16" addlevel="always"/>
+<gate name="-6" symbol="SKBV" x="0" y="-15.24" addlevel="always"/>
+</gates>
+<devices>
+<device name="" package="6POL254">
+<connects>
+<connect gate="-1" pin="1" pad="1"/>
+<connect gate="-2" pin="1" pad="2"/>
+<connect gate="-3" pin="1" pad="3"/>
+<connect gate="-4" pin="1" pad="4"/>
+<connect gate="-5" pin="1" pad="5"/>
+<connect gate="-6" pin="1" pad="6"/>
+</connects>
+<technologies>
+<technology name="">
+<attribute name="MF" value="" constant="no"/>
+<attribute name="MPN" value="" constant="no"/>
+<attribute name="OC_FARNELL" value="unknown" constant="no"/>
+<attribute name="OC_NEWARK" value="unknown" constant="no"/>
+</technology>
+</technologies>
+</device>
+</devices>
+</deviceset>
+</devicesets>
+</library>
 </libraries>
 <attributes>
 </attributes>
@@ -13468,11 +13256,11 @@ Distributor Buerklin, 11G810</description>
 <part name="LEG5_1" library="pinhead" deviceset="PINHD-1X3" device=""/>
 <part name="LEG6_2" library="pinhead" deviceset="PINHD-2X3" device=""/>
 <part name="LEG6_1" library="pinhead" deviceset="PINHD-1X3" device=""/>
-<part name="LED_ZASILANIE" library="led" deviceset="LED" device="SML0805"/>
+<part name="LED_ZASILANIE" library="led" deviceset="LED" device="SML0805" value="GREEN"/>
 <part name="R3" library="rcl" deviceset="R-EU_" device="R0805" value="510r"/>
 <part name="GND8" library="supply1" deviceset="GND" device=""/>
 <part name="+3V4" library="supply1" deviceset="+3V3" device=""/>
-<part name="MPU6050" library="pinhead" deviceset="PINHD-1X5" device=""/>
+<part name="MPU6050" library="pinhead" deviceset="PINHD-1X5" device="" value="6EOF"/>
 <part name="C7" library="rcl" deviceset="CPOL-EU" device="SMCB" value="10uF"/>
 <part name="C8" library="rcl" deviceset="CPOL-EU" device="SMCB" value="10uF"/>
 <part name="+3V5" library="supply1" deviceset="+3V3" device=""/>
@@ -13488,12 +13276,8 @@ Distributor Buerklin, 11G810</description>
 <part name="C3" library="rcl" deviceset="CPOL-EU" device="SMCB" value="10uF"/>
 <part name="C4" library="rcl" deviceset="CPOL-EU" device="SMCA" value="100n"/>
 <part name="P+1" library="supply1" deviceset="+5V" device=""/>
-<part name="WIFI" library="SparkFun-RF" deviceset="ESP8266_ESP-01" device=""/>
-<part name="GND2" library="supply1" deviceset="GND" device=""/>
-<part name="+3V1" library="supply1" deviceset="+3V3" device=""/>
 <part name="GND3" library="supply1" deviceset="GND" device=""/>
-<part name="BLUETOOTH" library="pinhead" deviceset="PINHD-1X4" device=""/>
-<part name="CZUJNIK_PODLOZA" library="pinhead" deviceset="PINHD-2X6" device=""/>
+<part name="ESP-CAM" library="pinhead" deviceset="PINHD-1X4" device="" value="ESP"/>
 <part name="R1" library="rcl" deviceset="R-EU_" device="R0805" value="510r"/>
 <part name="R2" library="rcl" deviceset="R-EU_" device="R0805" value="510r"/>
 <part name="GND4" library="supply1" deviceset="GND" device=""/>
@@ -13501,9 +13285,9 @@ Distributor Buerklin, 11G810</description>
 <part name="H2" library="holes" deviceset="MOUNT-HOLE" device="3.0"/>
 <part name="H3" library="holes" deviceset="MOUNT-HOLE" device="3.0"/>
 <part name="H4" library="holes" deviceset="MOUNT-HOLE" device="3.0"/>
-<part name="BATERIA" library="con-ptr500" deviceset="AK300/2" device=""/>
-<part name="PRZETWORNICA1" library="con-ptr500" deviceset="AK300/2" device=""/>
-<part name="PRZETWORNICA2" library="con-ptr500" deviceset="AK300/2" device=""/>
+<part name="BATERIA" library="con-ptr500" deviceset="AK300/2" device="" value="7.2V"/>
+<part name="PRZETWORNICA1" library="con-ptr500" deviceset="AK300/2" device="" value="6V"/>
+<part name="PRZETWORNICA2" library="con-ptr500" deviceset="AK300/2" device="" value="6V"/>
 <part name="R4" library="rcl" deviceset="R-EU_" device="R0805" value="10k"/>
 <part name="R5" library="rcl" deviceset="R-EU_" device="R0805" value="10k"/>
 <part name="R6" library="rcl" deviceset="R-EU_" device="R0805" value="10k"/>
@@ -13511,8 +13295,8 @@ Distributor Buerklin, 11G810</description>
 <part name="R8" library="rcl" deviceset="R-EU_" device="R0805" value="10k"/>
 <part name="R9" library="rcl" deviceset="R-EU_" device="R0805" value="10k"/>
 <part name="GND5" library="supply1" deviceset="GND" device=""/>
-<part name="WLACZNIK" library="switch" deviceset="255SB" device=""/>
-<part name="BATERIA_2" library="con-ptr500" deviceset="AK300/2" device=""/>
+<part name="WLACZNIK" library="switch" deviceset="255SB" device="" value="7.2V"/>
+<part name="BATERIA_2" library="con-ptr500" deviceset="AK300/2" device="" value="11.1V"/>
 <part name="GND6" library="supply1" deviceset="GND" device=""/>
 <part name="R10" library="rcl" deviceset="R-EU_" device="R0805" value="510r"/>
 <part name="R11" library="rcl" deviceset="R-EU_" device="R0805" value="510r"/>
@@ -13521,11 +13305,13 @@ Distributor Buerklin, 11G810</description>
 <part name="3V" library="mc33269" deviceset="MC33269" device=""/>
 <part name="R12" library="rcl" deviceset="R-EU_" device="R0805" value="510r"/>
 <part name="R13" library="rcl" deviceset="R-EU_" device="R0805" value="510r"/>
-<part name="LED_COM1" library="led" deviceset="LED" device="SML0805"/>
-<part name="LED_COM2" library="led" deviceset="LED" device="SML0805"/>
+<part name="LED_COM1" library="led" deviceset="LED" device="SML0805" value="YELLOW"/>
+<part name="LED_COM2" library="led" deviceset="LED" device="SML0805" value="RED"/>
 <part name="GND10" library="supply1" deviceset="GND" device=""/>
 <part name="GND14" library="supply1" deviceset="GND" device=""/>
-<part name="SHARP" library="pinhead" deviceset="PINHD-1X3" device=""/>
+<part name="SHARP" library="pinhead" deviceset="PINHD-1X3" device="" value="40CM"/>
+<part name="X1" library="con-phoenix-254" deviceset="MPT6" device="" value="ARK2"/>
+<part name="X2" library="con-phoenix-254" deviceset="MPT6" device="" value="ARK1"/>
 </parts>
 <sheets>
 <sheet>
@@ -13564,12 +13350,8 @@ Distributor Buerklin, 11G810</description>
 <instance part="C3" gate="G$1" x="38.1" y="264.16"/>
 <instance part="C4" gate="G$1" x="45.72" y="264.16"/>
 <instance part="P+1" gate="1" x="45.72" y="292.1"/>
-<instance part="WIFI" gate="G$1" x="154.94" y="139.7"/>
-<instance part="GND2" gate="1" x="185.42" y="129.54"/>
-<instance part="+3V1" gate="G$1" x="119.38" y="154.94"/>
 <instance part="GND3" gate="1" x="81.28" y="233.68"/>
-<instance part="BLUETOOTH" gate="A" x="132.08" y="175.26"/>
-<instance part="CZUJNIK_PODLOZA" gate="A" x="132.08" y="76.2"/>
+<instance part="ESP-CAM" gate="A" x="132.08" y="175.26"/>
 <instance part="R1" gate="G$1" x="53.34" y="25.4" rot="R90"/>
 <instance part="R2" gate="G$1" x="53.34" y="10.16" rot="R90"/>
 <instance part="GND4" gate="1" x="53.34" y="-2.54"/>
@@ -13583,13 +13365,13 @@ Distributor Buerklin, 11G810</description>
 <instance part="PRZETWORNICA1" gate="-2" x="93.98" y="218.44" rot="R180"/>
 <instance part="PRZETWORNICA2" gate="-1" x="93.98" y="198.12" rot="R180"/>
 <instance part="PRZETWORNICA2" gate="-2" x="93.98" y="193.04" rot="R180"/>
-<instance part="R4" gate="G$1" x="147.32" y="81.28" rot="R180"/>
-<instance part="R5" gate="G$1" x="157.48" y="78.74" rot="R180"/>
+<instance part="R4" gate="G$1" x="147.32" y="86.36" rot="R180"/>
+<instance part="R5" gate="G$1" x="157.48" y="81.28" rot="R180"/>
 <instance part="R6" gate="G$1" x="147.32" y="76.2" rot="R180"/>
-<instance part="R7" gate="G$1" x="165.1" y="73.66" rot="R180"/>
-<instance part="R8" gate="G$1" x="157.48" y="71.12" rot="R180"/>
-<instance part="R9" gate="G$1" x="147.32" y="68.58" rot="R180"/>
-<instance part="GND5" gate="1" x="182.88" y="60.96"/>
+<instance part="R7" gate="G$1" x="165.1" y="71.12" rot="R180"/>
+<instance part="R8" gate="G$1" x="157.48" y="66.04" rot="R180"/>
+<instance part="R9" gate="G$1" x="147.32" y="60.96" rot="R180"/>
+<instance part="GND5" gate="1" x="182.88" y="50.8"/>
 <instance part="WLACZNIK" gate="1" x="7.62" y="294.64" rot="R270"/>
 <instance part="BATERIA_2" gate="-1" x="93.98" y="289.56" rot="R180"/>
 <instance part="BATERIA_2" gate="-2" x="93.98" y="294.64" rot="R180"/>
@@ -13606,6 +13388,18 @@ Distributor Buerklin, 11G810</description>
 <instance part="GND10" gate="1" x="124.46" y="12.7"/>
 <instance part="GND14" gate="1" x="134.62" y="12.7"/>
 <instance part="SHARP" gate="A" x="182.88" y="180.34"/>
+<instance part="X1" gate="-1" x="93.98" y="81.28"/>
+<instance part="X1" gate="-2" x="93.98" y="76.2"/>
+<instance part="X1" gate="-3" x="93.98" y="71.12"/>
+<instance part="X1" gate="-4" x="93.98" y="66.04"/>
+<instance part="X1" gate="-5" x="93.98" y="60.96"/>
+<instance part="X1" gate="-6" x="93.98" y="55.88"/>
+<instance part="X2" gate="-1" x="119.38" y="60.96" rot="R180"/>
+<instance part="X2" gate="-2" x="119.38" y="66.04" rot="R180"/>
+<instance part="X2" gate="-3" x="119.38" y="71.12" rot="R180"/>
+<instance part="X2" gate="-4" x="119.38" y="76.2" rot="R180"/>
+<instance part="X2" gate="-5" x="119.38" y="81.28" rot="R180"/>
+<instance part="X2" gate="-6" x="119.38" y="86.36" rot="R180"/>
 </instances>
 <busses>
 </busses>
@@ -13634,20 +13428,6 @@ Distributor Buerklin, 11G810</description>
 <pinref part="MPU6050" gate="A" pin="1"/>
 <wire x1="119.38" y1="121.92" x2="109.22" y2="121.92" width="0.1524" layer="91"/>
 <label x="109.22" y="121.92" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="WIFI" gate="G$1" pin="VCC"/>
-<wire x1="142.24" y1="137.16" x2="119.38" y2="137.16" width="0.1524" layer="91"/>
-<pinref part="+3V1" gate="G$1" pin="+3V3"/>
-<wire x1="119.38" y1="137.16" x2="119.38" y2="139.7" width="0.1524" layer="91"/>
-<pinref part="WIFI" gate="G$1" pin="CH_PD"/>
-<wire x1="119.38" y1="139.7" x2="119.38" y2="142.24" width="0.1524" layer="91"/>
-<wire x1="119.38" y1="142.24" x2="119.38" y2="152.4" width="0.1524" layer="91"/>
-<wire x1="142.24" y1="142.24" x2="119.38" y2="142.24" width="0.1524" layer="91"/>
-<junction x="119.38" y="142.24"/>
-<pinref part="WIFI" gate="G$1" pin="RST"/>
-<wire x1="142.24" y1="139.7" x2="119.38" y2="139.7" width="0.1524" layer="91"/>
-<junction x="119.38" y="139.7"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -13822,19 +13602,13 @@ Distributor Buerklin, 11G810</description>
 <wire x1="25.4" y1="269.24" x2="25.4" y2="254" width="0.1524" layer="91"/>
 </segment>
 <segment>
-<pinref part="WIFI" gate="G$1" pin="GND"/>
-<wire x1="167.64" y1="144.78" x2="185.42" y2="144.78" width="0.1524" layer="91"/>
-<wire x1="185.42" y1="144.78" x2="185.42" y2="132.08" width="0.1524" layer="91"/>
-<pinref part="GND2" gate="1" pin="GND"/>
-</segment>
-<segment>
 <wire x1="88.9" y1="241.3" x2="81.28" y2="241.3" width="0.1524" layer="91"/>
 <wire x1="81.28" y1="241.3" x2="81.28" y2="236.22" width="0.1524" layer="91"/>
 <pinref part="GND3" gate="1" pin="GND"/>
 <pinref part="BATERIA" gate="-2" pin="KL"/>
 </segment>
 <segment>
-<pinref part="BLUETOOTH" gate="A" pin="3"/>
+<pinref part="ESP-CAM" gate="A" pin="3"/>
 <wire x1="129.54" y1="175.26" x2="121.92" y2="175.26" width="0.1524" layer="91"/>
 <label x="121.92" y="175.26" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -13845,28 +13619,28 @@ Distributor Buerklin, 11G810</description>
 </segment>
 <segment>
 <pinref part="R4" gate="G$1" pin="1"/>
-<wire x1="152.4" y1="81.28" x2="182.88" y2="81.28" width="0.1524" layer="91"/>
-<wire x1="182.88" y1="81.28" x2="182.88" y2="78.74" width="0.1524" layer="91"/>
+<wire x1="152.4" y1="86.36" x2="182.88" y2="86.36" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="86.36" x2="182.88" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="R5" gate="G$1" pin="1"/>
-<wire x1="182.88" y1="78.74" x2="182.88" y2="76.2" width="0.1524" layer="91"/>
-<wire x1="182.88" y1="76.2" x2="182.88" y2="73.66" width="0.1524" layer="91"/>
-<wire x1="182.88" y1="73.66" x2="182.88" y2="71.12" width="0.1524" layer="91"/>
-<wire x1="182.88" y1="71.12" x2="182.88" y2="68.58" width="0.1524" layer="91"/>
-<wire x1="182.88" y1="68.58" x2="182.88" y2="63.5" width="0.1524" layer="91"/>
-<wire x1="162.56" y1="78.74" x2="182.88" y2="78.74" width="0.1524" layer="91"/>
-<junction x="182.88" y="78.74"/>
+<wire x1="182.88" y1="81.28" x2="182.88" y2="76.2" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="76.2" x2="182.88" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="71.12" x2="182.88" y2="66.04" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="66.04" x2="182.88" y2="60.96" width="0.1524" layer="91"/>
+<wire x1="182.88" y1="60.96" x2="182.88" y2="53.34" width="0.1524" layer="91"/>
+<wire x1="162.56" y1="81.28" x2="182.88" y2="81.28" width="0.1524" layer="91"/>
+<junction x="182.88" y="81.28"/>
 <pinref part="R6" gate="G$1" pin="1"/>
 <wire x1="152.4" y1="76.2" x2="182.88" y2="76.2" width="0.1524" layer="91"/>
 <junction x="182.88" y="76.2"/>
 <pinref part="R7" gate="G$1" pin="1"/>
-<wire x1="170.18" y1="73.66" x2="182.88" y2="73.66" width="0.1524" layer="91"/>
-<junction x="182.88" y="73.66"/>
-<pinref part="R8" gate="G$1" pin="1"/>
-<wire x1="162.56" y1="71.12" x2="182.88" y2="71.12" width="0.1524" layer="91"/>
+<wire x1="170.18" y1="71.12" x2="182.88" y2="71.12" width="0.1524" layer="91"/>
 <junction x="182.88" y="71.12"/>
+<pinref part="R8" gate="G$1" pin="1"/>
+<wire x1="162.56" y1="66.04" x2="182.88" y2="66.04" width="0.1524" layer="91"/>
+<junction x="182.88" y="66.04"/>
 <pinref part="R9" gate="G$1" pin="1"/>
-<wire x1="152.4" y1="68.58" x2="182.88" y2="68.58" width="0.1524" layer="91"/>
-<junction x="182.88" y="68.58"/>
+<wire x1="152.4" y1="60.96" x2="182.88" y2="60.96" width="0.1524" layer="91"/>
+<junction x="182.88" y="60.96"/>
 <pinref part="GND5" gate="1" pin="GND"/>
 </segment>
 <segment>
@@ -13894,13 +13668,6 @@ Distributor Buerklin, 11G810</description>
 <pinref part="SHARP" gate="A" pin="2"/>
 <wire x1="180.34" y1="180.34" x2="167.64" y2="180.34" width="0.1524" layer="91"/>
 <label x="167.64" y="180.34" size="1.27" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="INT" class="0">
-<segment>
-<pinref part="MPU6050" gate="A" pin="5"/>
-<wire x1="119.38" y1="111.76" x2="109.22" y2="111.76" width="0.1524" layer="91"/>
-<label x="109.22" y="111.76" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="PWM1_1" class="0">
@@ -14316,7 +14083,7 @@ Distributor Buerklin, 11G810</description>
 <label x="60.96" y="152.4" size="1.016" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="BLUETOOTH" gate="A" pin="4"/>
+<pinref part="ESP-CAM" gate="A" pin="4"/>
 <wire x1="129.54" y1="172.72" x2="121.92" y2="172.72" width="0.1524" layer="91"/>
 <label x="121.92" y="172.72" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -14326,30 +14093,6 @@ Distributor Buerklin, 11G810</description>
 <label x="167.64" y="177.8" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
-<net name="RXD" class="0">
-<segment>
-<pinref part="WIFI" gate="G$1" pin="TXD"/>
-<wire x1="142.24" y1="144.78" x2="134.62" y2="144.78" width="0.1524" layer="91"/>
-<label x="134.62" y="144.78" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
-<pinref part="TEENSY41" gate="G$1" pin="0/RX"/>
-<wire x1="15.24" y1="149.86" x2="10.16" y2="149.86" width="0.1524" layer="91"/>
-<label x="10.16" y="149.86" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
-<net name="TXD" class="0">
-<segment>
-<pinref part="WIFI" gate="G$1" pin="RXD"/>
-<wire x1="167.64" y1="137.16" x2="172.72" y2="137.16" width="0.1524" layer="91"/>
-<label x="172.72" y="137.16" size="1.016" layer="95" xref="yes"/>
-</segment>
-<segment>
-<pinref part="TEENSY41" gate="G$1" pin="1/TX"/>
-<wire x1="15.24" y1="147.32" x2="10.16" y2="147.32" width="0.1524" layer="91"/>
-<label x="10.16" y="147.32" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-</net>
 <net name="LEG6" class="0">
 <segment>
 <pinref part="TEENSY41" gate="G$1" pin="14/A0"/>
@@ -14357,9 +14100,9 @@ Distributor Buerklin, 11G810</description>
 <label x="60.96" y="121.92" size="1.016" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="CZUJNIK_PODLOZA" gate="A" pin="11"/>
-<wire x1="129.54" y1="68.58" x2="119.38" y2="68.58" width="0.1524" layer="91"/>
-<label x="119.38" y="68.58" size="1.016" layer="95" rot="R180" xref="yes"/>
+<pinref part="X1" gate="-6" pin="1"/>
+<wire x1="91.44" y1="55.88" x2="86.36" y2="55.88" width="0.1524" layer="91"/>
+<label x="86.36" y="55.88" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="LEG5" class="0">
@@ -14369,9 +14112,9 @@ Distributor Buerklin, 11G810</description>
 <label x="60.96" y="124.46" size="1.016" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="CZUJNIK_PODLOZA" gate="A" pin="9"/>
-<wire x1="129.54" y1="71.12" x2="119.38" y2="71.12" width="0.1524" layer="91"/>
-<label x="119.38" y="71.12" size="1.016" layer="95" rot="R180" xref="yes"/>
+<pinref part="X1" gate="-5" pin="1"/>
+<wire x1="91.44" y1="60.96" x2="86.36" y2="60.96" width="0.1524" layer="91"/>
+<label x="86.36" y="60.96" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="LEG4" class="0">
@@ -14381,45 +14124,45 @@ Distributor Buerklin, 11G810</description>
 <label x="60.96" y="127" size="1.016" layer="95" xref="yes"/>
 </segment>
 <segment>
-<pinref part="CZUJNIK_PODLOZA" gate="A" pin="7"/>
-<wire x1="129.54" y1="73.66" x2="119.38" y2="73.66" width="0.1524" layer="91"/>
-<label x="119.38" y="73.66" size="1.016" layer="95" rot="R180" xref="yes"/>
+<pinref part="X1" gate="-4" pin="1"/>
+<wire x1="91.44" y1="66.04" x2="86.36" y2="66.04" width="0.1524" layer="91"/>
+<label x="86.36" y="66.04" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="LEG1" class="0">
-<segment>
-<pinref part="CZUJNIK_PODLOZA" gate="A" pin="1"/>
-<wire x1="129.54" y1="81.28" x2="119.38" y2="81.28" width="0.1524" layer="91"/>
-<label x="119.38" y="81.28" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
 <segment>
 <pinref part="TEENSY41" gate="G$1" pin="21/A7"/>
 <wire x1="55.88" y1="139.7" x2="60.96" y2="139.7" width="0.1524" layer="91"/>
 <label x="60.96" y="139.7" size="1.016" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="X1" gate="-1" pin="1"/>
+<wire x1="91.44" y1="81.28" x2="86.36" y2="81.28" width="0.1524" layer="91"/>
+<label x="86.36" y="81.28" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="LEG2" class="0">
-<segment>
-<pinref part="CZUJNIK_PODLOZA" gate="A" pin="3"/>
-<wire x1="129.54" y1="78.74" x2="119.38" y2="78.74" width="0.1524" layer="91"/>
-<label x="119.38" y="78.74" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
 <segment>
 <pinref part="TEENSY41" gate="G$1" pin="20/A6"/>
 <wire x1="55.88" y1="137.16" x2="60.96" y2="137.16" width="0.1524" layer="91"/>
 <label x="60.96" y="137.16" size="1.016" layer="95" xref="yes"/>
 </segment>
+<segment>
+<pinref part="X1" gate="-2" pin="1"/>
+<wire x1="91.44" y1="76.2" x2="86.36" y2="76.2" width="0.1524" layer="91"/>
+<label x="86.36" y="76.2" size="1.27" layer="95" rot="R180" xref="yes"/>
+</segment>
 </net>
 <net name="LEG3" class="0">
-<segment>
-<pinref part="CZUJNIK_PODLOZA" gate="A" pin="5"/>
-<wire x1="129.54" y1="76.2" x2="119.38" y2="76.2" width="0.1524" layer="91"/>
-<label x="119.38" y="76.2" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
 <segment>
 <pinref part="TEENSY41" gate="G$1" pin="17/A3"/>
 <wire x1="55.88" y1="129.54" x2="60.96" y2="129.54" width="0.1524" layer="91"/>
 <label x="60.96" y="129.54" size="1.016" layer="95" xref="yes"/>
+</segment>
+<segment>
+<pinref part="X1" gate="-3" pin="1"/>
+<wire x1="91.44" y1="71.12" x2="86.36" y2="71.12" width="0.1524" layer="91"/>
+<label x="86.36" y="71.12" size="1.27" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="BATTERY" class="0">
@@ -14445,7 +14188,7 @@ Distributor Buerklin, 11G810</description>
 <label x="10.16" y="104.14" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="BLUETOOTH" gate="A" pin="1"/>
+<pinref part="ESP-CAM" gate="A" pin="1"/>
 <wire x1="129.54" y1="180.34" x2="121.92" y2="180.34" width="0.1524" layer="91"/>
 <label x="121.92" y="180.34" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -14457,7 +14200,7 @@ Distributor Buerklin, 11G810</description>
 <label x="10.16" y="101.6" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 <segment>
-<pinref part="BLUETOOTH" gate="A" pin="2"/>
+<pinref part="ESP-CAM" gate="A" pin="2"/>
 <wire x1="129.54" y1="177.8" x2="121.92" y2="177.8" width="0.1524" layer="91"/>
 <label x="121.92" y="177.8" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
@@ -14471,44 +14214,44 @@ Distributor Buerklin, 11G810</description>
 </net>
 <net name="N$1" class="0">
 <segment>
-<pinref part="CZUJNIK_PODLOZA" gate="A" pin="2"/>
-<wire x1="137.16" y1="81.28" x2="142.24" y2="81.28" width="0.1524" layer="91"/>
 <pinref part="R4" gate="G$1" pin="2"/>
+<pinref part="X2" gate="-6" pin="1"/>
+<wire x1="142.24" y1="86.36" x2="121.92" y2="86.36" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$2" class="0">
 <segment>
-<pinref part="CZUJNIK_PODLOZA" gate="A" pin="4"/>
-<wire x1="137.16" y1="78.74" x2="152.4" y2="78.74" width="0.1524" layer="91"/>
 <pinref part="R5" gate="G$1" pin="2"/>
+<pinref part="X2" gate="-5" pin="1"/>
+<wire x1="152.4" y1="81.28" x2="121.92" y2="81.28" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$3" class="0">
 <segment>
-<pinref part="CZUJNIK_PODLOZA" gate="A" pin="6"/>
-<wire x1="137.16" y1="76.2" x2="142.24" y2="76.2" width="0.1524" layer="91"/>
 <pinref part="R6" gate="G$1" pin="2"/>
+<pinref part="X2" gate="-4" pin="1"/>
+<wire x1="142.24" y1="76.2" x2="121.92" y2="76.2" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$5" class="0">
 <segment>
-<pinref part="CZUJNIK_PODLOZA" gate="A" pin="8"/>
-<wire x1="137.16" y1="73.66" x2="160.02" y2="73.66" width="0.1524" layer="91"/>
+<wire x1="121.92" y1="71.12" x2="160.02" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="R7" gate="G$1" pin="2"/>
+<pinref part="X2" gate="-3" pin="1"/>
 </segment>
 </net>
 <net name="N$6" class="0">
 <segment>
-<pinref part="CZUJNIK_PODLOZA" gate="A" pin="10"/>
-<wire x1="137.16" y1="71.12" x2="152.4" y2="71.12" width="0.1524" layer="91"/>
 <pinref part="R8" gate="G$1" pin="2"/>
+<pinref part="X2" gate="-2" pin="1"/>
+<wire x1="152.4" y1="66.04" x2="121.92" y2="66.04" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$7" class="0">
 <segment>
-<pinref part="CZUJNIK_PODLOZA" gate="A" pin="12"/>
-<wire x1="137.16" y1="68.58" x2="142.24" y2="68.58" width="0.1524" layer="91"/>
 <pinref part="R9" gate="G$1" pin="2"/>
+<pinref part="X2" gate="-1" pin="1"/>
+<wire x1="142.24" y1="60.96" x2="121.92" y2="60.96" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="BAT_IN" class="0">
