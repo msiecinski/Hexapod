@@ -12,5 +12,7 @@ void Move(movetype,int);            //direction,offset
 void MoveAtPlace(movetype,int);
 void Control(uint16_t);
 _Bool CheckGround(int);
+void FindGround(int);
+void PrepareWalk(movetype direction);
 
 #endif /* Movement_H_ */
