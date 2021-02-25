@@ -56,21 +56,22 @@ void RotateCordinate(int leg,position &pos,int offsetX,int offsetY)
     xcos(fi)-ycsin(fi)
     xsin(fi)+ycos(fi)
     */
-    if(leg == 1 || leg == 2) //fi = 0 deg 
+    if(leg == 1 || leg == 4) //fi = 0 deg 
     {
         pos.x += offsetX;
+        pos.y += offsetY;
     }
     else
     {
-        if(leg == 0 || leg == 5)    //fi=+45 deg
+        if(leg == 2 || leg == 5)    //fi=+45 deg
         {
-            pos.x += ((offsetX*0.70710678118) - (offsetY*70710678118));    //xcos(fi)-ycsin(fi)
-            pos.y += ((offsetX*0.70710678118) + (offsetY*70710678118));     //xsin(fi)+ycos(fi)
+            pos.x += (double)((offsetX*0.70710678118) - (double)(offsetY*0.70710678118));    //xcos(fi)-ycsin(fi)
+            pos.y += (double)((offsetX*0.70710678118) + (double)(offsetY*0.70710678118));     //xsin(fi)+ycos(fi)
         }
-        else    // leg == 3 || leg == 4//fi=-45 deg
+        else    // leg == 3 || leg == 0//fi=-45 deg
         {
-            pos.x += ((offsetX*0.70710678118) + (offsetY*70710678118)); 
-            pos.y += ((-offsetX*0.70710678118) + (offsetY*70710678118));;
+            pos.x += (double)((offsetX*0.70710678118) + (double)(offsetY*0.70710678118)); 
+            pos.y += (double)((-offsetX*0.70710678118) + (double)(offsetY*0.70710678118));;
         }
     }
 }

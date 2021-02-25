@@ -148,6 +148,23 @@ _Bool CheckGround(int leg)
     return((_Bool)digitalRead(SensorTab[leg]));
 }
 
+void FindGround(int leg)
+{
+    hexapod setPosition;
+    int interration;
+    setPosition.delay = VERTICALMOVEDELAY;              //set delay
+    setPosition.xyz = hexapodControl[leg].xyz;          //copy position
+    setPosition.offset = hexapodControl[leg].offset;    //copy offset
+    interration = MOVEHEIGHT + setPosition.offset.z;
+    //First again move up leg
+    for(int k = 1; k<=interration; k++)
+    {
+        setPosition.xyz.z = hexapodControl[leg].xyz.z + 1;
+        setPosition.offset.z = hexapodControl[leg].offset.z - 1;
+        while(!SetLeg(leg,setPosition));
+    }
+}
+
 void Move(movetype direction,int offset)
 {
     /*
@@ -307,7 +324,7 @@ void Move(movetype direction,int offset)
                 SetLeg(i,setPosition[i]);
                 if(hexapodControl[i].offset.z < -5)
                 {
-                    ; //still no ground so do something diffrent
+                    FindGround(); //still no ground so do something diffrent
                 }  
             }
             i += 2;
@@ -406,6 +423,12 @@ void Control(uint16_t data)
         case 0x80:
             MoveAtPlace(down,1);
             break;
+        case 0x100:
+            SlideHorizontal(-1,1);
+            break;
+        case 0x200:
+            SlideHorizontal(1,-1);
+            break;
         default:
             skipDelay++;    //no matching value on both switch statement = skipDelays
             break;  
@@ -436,4 +459,113 @@ void Control(uint16_t data)
         delayFlag=1;        //set delay should be not too big
         while(delayFlag);
     }
+}
+
+void PrepareWalk(movetype direction)
+{
+    hexapod setPosition[6],tmp;
+
+    for(int i = 0; i<6; i++)
+    {   
+        setPosition[i].delay = 0;                   //init 0 value for delay 
+        setPosition[i].offset = {0,0,0};            //clear all offsets (for be sure)
+        setPosition[i].xyz = hexapodControl[i].xyz; //copy actual position
+    }
+    tmp.offset = {0,0,0};
+    tmp.delay  = 0;
+
+    for(int i = 0; i < 6; i++ )
+    {
+        tmp.xyz = {0,0,0};
+        if(i == 1 || i == 4)
+            continue;
+        for(int k = 1; k<=MOVEHEIGHT; k++)
+        {
+            setPosition[i].xyz.z = hexapodControl[i].xyz.z+1;
+            setPosition[i].delay = VERTICALMOVEDELAY;
+            while(!SetLeg(i,setPosition[i]));
+        }
+       if(i == 3 || i == 0)
+        {
+            if(direction == forvard)
+            {
+                setPosition[i].xyz = {0,19,hexapodControl[i].xyz.z};
+            }
+            else
+            {
+                RotateCordinate(i,tmp.xyz,0,19);
+                setPosition[i].xyz = tmp.xyz;
+            }
+        }
+        if(i == 2 || i == 5)
+        {
+            if(direction != forvard)
+            {
+                setPosition[i].xyz = {0,19,hexapodControl[i].xyz.z};
+            }
+            else
+            {
+                RotateCordinate(i,tmp.xyz,0,19);
+                setPosition[i].xyz = tmp.xyz;
+            }
+        }
+        setPosition[i].xyz.z = hexapodControl[i].xyz.z;
+        setPosition[i].delay = VERTICALMOVEDELAY;
+        while(!SetLeg(i,setPosition[i]));
+
+        for(int k = 1; k<=MOVEHEIGHT; k++)
+        {
+            setPosition[i].xyz.z = hexapodControl[i].xyz.z-1;
+            setPosition[i].delay = VERTICALMOVEDELAY;
+            while(!SetLeg(i,setPosition[i]));
+        }
+    }  
+}
+
+void PrepareWalk2(movetype direction)
+{
+    hexapod setPosition[6],tmp;
+
+    tmp.xyz = {0,0,BASEHEIGHT};
+    for(int i = 0; i<6; i++)
+    {   
+        setPosition[i].delay = 0;                   //init 0 value for delay 
+        setPosition[i].offset = {0,0,0};            //clear all offsets (for be sure)
+        setPosition[i].xyz = hexapodControl[i].xyz; //copy actual position
+    }
+
+    for(int k = 1; k<=MOVEHEIGHT; k++)
+    {
+        setPosition[3].xyz.z = hexapodControl[3].xyz.z+1;
+        setPosition[0].xyz.z = hexapodControl[0].xyz.z+1;
+        setPosition[3].delay = VERTICALMOVEDELAY;
+        while(!SetPosition(0,setPosition[0]));
+        while(!SetPosition(3,setPosition[3]));
+    }
+     
+    if(1)
+    {
+        setPosition[0].xyz = {0,19,BASEHEIGHT};
+        setPosition[3].xyz = {0,19,BASEHEIGHT};
+    }
+    else
+    {
+        RotateCordinate(0,tmp.xyz,0,19);
+        setPosition[0].xyz = tmp.xyz;
+        tmp.xyz = {0,0,BASEHEIGHT};
+        RotateCordinate(3,tmp.xyz,0,19);
+        setPosition[3].xyz = tmp.xyz;
+    }
+    setPosition[3].delay = VERTICALMOVEDELAY;
+    while(!SetPosition(0,setPosition[0]));
+    while(!SetPosition(3,setPosition[3]));
+       // return;
+    for(int k = 1; k<MOVEHEIGHT; k++)
+    {
+        setPosition[3].xyz.z = hexapodControl[3].xyz.z-1;
+        setPosition[0].xyz.z = hexapodControl[0].xyz.z-1;
+        setPosition[3].delay = VERTICALMOVEDELAY;
+        while(!SetPosition(0,setPosition[0]));
+        while(!SetPosition(3,setPosition[3]));
+    } 
 }
