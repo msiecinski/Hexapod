@@ -32,4 +32,11 @@
 #define SENSOR_5 (15)
 #define SENSOR_6 (14)
 
+#define ADC_SENSOR_1    (A9)
+#define ADC_SENSOR_2    (A8)
+#define ADC_LED_1       (30)
+#define ADC_LED_2       (31)
+
+#define SHARP_SENSOR    (32)
+
 #endif /* Leg_H_ */

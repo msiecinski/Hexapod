@@ -4,6 +4,8 @@
 
 extern std::array<hexapod, 6> hexapodControl;
 extern volatile uint32_t delayFlag;
+extern volatile int adc[2];
+extern int sharpSensor;
 
 void PWM50Hz(void)
 {   
@@ -116,7 +118,7 @@ void PWM50Hz(void)
     }
 }
 
-void DelayFunc()
+void DelayFunc(void)
 {
    /*   
         Implementation delay function
@@ -137,4 +139,28 @@ void DelayFunc()
             delayCounter++;
         }
     }
+}
+
+void ReadFunc(void)
+{
+    static int counter = 0;
+    static int ledState = LOW;
+    if(counter>=9)
+    {   
+        adc[0] = analogRead(ADC_SENSOR_1);
+        adc[1] = analogRead(ADC_SENSOR_2);
+        
+        if (ledState == LOW) {
+            ledState = HIGH;
+        } else {
+            ledState = LOW;
+        }
+        digitalWrite(LED_BUILTIN, ledState);
+        counter = 0;
+    }
+    else
+    {
+        counter++;
+    }
+    sharpSensor = digitalRead(SHARP_SENSOR);
 }

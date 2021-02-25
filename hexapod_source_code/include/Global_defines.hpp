@@ -34,19 +34,20 @@
     //constants based on the robot dimensions 
     #define A1   (5)
     #define A2   (15)
-    #define A3   (22)
+    #define A3   (2)//(22)
     #define E    (2)
 
     #define CIRCLEVAL           2                       //diff ofset for turning
     #define BASEHEIGHT          (-5)
     #define MOVEHEIGHT          8
-    #define STEPSIZE            3
+    #define STEPSIZE            5
     #define BASEWIDTH           10
 
     #define CALIBRATION         7                       //calibration interupt for 50Hz pwm
     #define INTERRUPTCOUNTER    (4000 - CALIBRATION)    //interupt counter for 50Hz pwm
     #define LIMITHI             (500 + 12)              //limit for skip conditions after every 2.5ms //12 bcs of 0x1FF
     
+    #define DELAYTIMER1         50000                   //!!!!!!!!!!!!!!!!!!!!!!!
     #define PWMTIMEBASE         5                       //time base for interrupts
     #define DELAYTIMEBASE       1000                    //time base for delay interrupts
     #define DELAYCOUNTERMAXVAL  10                     //max value for delay_counter

@@ -3,6 +3,7 @@
 #include <Timefunc.hpp>
 #include <MPU6050.h>
 #include <TimerThree.h>
+#include <TimerOne.h>
 
 extern MPU6050 imu;     //MPU6050 object
 IntervalTimer myTimer;  //object for IntervalTimer
@@ -44,10 +45,34 @@ void SetupLegSensor(void)
     pinMode(SENSOR_6, INPUT_PULLUP);
 }
 
+void SetupLed(void)
+{
+    pinMode(ADC_LED_1, OUTPUT);
+    pinMode(ADC_LED_2, OUTPUT);
+    pinMode(LED_BUILTIN, OUTPUT);
+}
+
+void SetupAnalog(void)
+{
+    pinMode(ADC_SENSOR_1, INPUT);
+    pinMode(ADC_SENSOR_2, INPUT);
+}
+
+void SetupSharp(void)
+{
+    pinMode(SHARP_SENSOR, INPUT);
+}
+
 void SetupTimer3(int time_us)
 {
     Timer3.initialize(time_us);
     Timer3.attachInterrupt(PWM50Hz); 
+}
+
+void SetupTimer1(int time_us)
+{
+    Timer1.initialize(time_us);
+    Timer1.attachInterrupt(ReadFunc); 
 }
 
 void SetupUart(int baud)

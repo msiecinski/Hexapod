@@ -1,7 +1,7 @@
 #include <Gyroscope.hpp>
 
 MPU6050 imu;     //MPU6050 object
-double angle_x, angle_y;
+double angle_x = 0, angle_y = 0;
 
 void GyroReadAngle(void)
 {  
@@ -35,4 +35,9 @@ void GyroReadAngle(void)
     ax_sum = 0;
     ay_sum = 0;
     az_sum = 0;
+    Serial.println("Oś x:");
+    Serial.println(angle_x);
+    Serial.println("Oś y:");
+    Serial.println(angle_y);
+    delay(1000);
 }
