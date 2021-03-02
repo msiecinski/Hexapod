@@ -45,7 +45,7 @@ void AngleToDuty(hexapod &pos)
     pos.duty[2] = (pos.angles.q3<0) ? 100 : (pos.angles.q3>180) ? 500 : ((uint32_t)((pos.angles.q3*20/9)+100));
 }
 
-void RotateCordinate(int leg,position &pos,int offsetX,int offsetY)
+void RotateCordinate(const int leg, position &pos, const int offsetX, const int offsetY)
 {
     /*
     Function using to rotate input offset
