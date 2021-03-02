@@ -57,6 +57,7 @@
     #define TRUE                1          
     #define FALSE               0
     
+    #define HWSERIAL            Serial7                 //Serial port for bluetooth 
 
 #endif /* Global_defines_H_ */
 

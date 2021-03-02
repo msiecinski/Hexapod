@@ -77,7 +77,7 @@ void SetupTimer1(int time_us)
 
 void SetupUart(int baud)
 {
-    Serial1.begin(baud);
+    HWSERIAL.begin(baud);
 }
 
 _Bool SetupMPU6050(void)
