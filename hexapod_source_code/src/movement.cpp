@@ -180,8 +180,7 @@ void Move(movetype direction,int offset)
     int posOffset[6];          //calculate offests depends on actual posiotn and move type(direction)
     int posOffsetTMP[6];
     hexapod setPosition[6];    //calculate step position for all legs
-    int step;
-  
+   
     switch(direction)
     {
        default:
@@ -261,34 +260,14 @@ void Move(movetype direction,int offset)
             SetThreeLegs(j,setPosition);
         }
         //now lets move
-        while(posOffset[0+j] || posOffset[2+j] || posOffset[4+j])
-        {
-            for(int i = 0;  i<6; i++)
-            { 
-                if(posOffset[i]>0)
-                {
-                    step = 1;
-                    posOffset[i]--; 
-                }
-                else
-                {
-                    if(posOffset[i]<0)
-                    {
-                        step = -1;
-                        posOffset[i]++; 
-                    }
-                    else 
-                    {
-                        step = 0;  //do nothing untill all posOffset[i]!-= 0;
-                    }
-                }
-                RotateCordinate(i,setPosition[i].xyz,step);     //rotate step
-            }
-            //set delay
-            setPosition[5].delay = 1;
-            SetAllLegs(setPosition);
+        for(int i = 0;  i<6; i++)
+        { 
+            RotateCordinate(i,setPosition[i].xyz,posOffset[i]);     //rotate offset
         }
-        //move down slowly
+        //set delay
+        setPosition[5].delay = 1;
+        SetAllLegs(setPosition);
+         //move down slowly
         for(int k = 1; k<=MOVEHEIGHT; k++)
         {
             for(int i = j;  i<6; )
@@ -485,7 +464,7 @@ void PrepareWalk(movetype direction)
             setPosition[i].delay = VERTICALMOVEDELAY;
             while(!SetLeg(i,setPosition[i]));
         }
-       if(i == 3 || i == 0)
+        if(i == 3 || i == 0)
         {
             if(direction == forvard)
             {
