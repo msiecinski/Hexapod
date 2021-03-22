@@ -16595,26 +16595,26 @@ Grid 2.54 mm&lt;p&gt;
 </net>
 <net name="TXD7" class="0">
 <segment>
-<pinref part="TEENSY41" gate="G$1" pin="28"/>
-<wire x1="15.24" y1="104.14" x2="10.16" y2="104.14" width="0.1524" layer="91"/>
-<label x="10.16" y="104.14" size="1.016" layer="95" rot="R180" xref="yes"/>
-</segment>
-<segment>
 <pinref part="HC-06" gate="A" pin="1"/>
 <wire x1="129.54" y1="180.34" x2="121.92" y2="180.34" width="0.1524" layer="91"/>
 <label x="121.92" y="180.34" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
-</net>
-<net name="RXD7" class="0">
 <segment>
 <pinref part="TEENSY41" gate="G$1" pin="29"/>
 <wire x1="15.24" y1="101.6" x2="10.16" y2="101.6" width="0.1524" layer="91"/>
 <label x="10.16" y="101.6" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
+</net>
+<net name="RXD7" class="0">
 <segment>
 <pinref part="HC-06" gate="A" pin="2"/>
 <wire x1="129.54" y1="177.8" x2="121.92" y2="177.8" width="0.1524" layer="91"/>
 <label x="121.92" y="177.8" size="1.016" layer="95" rot="R180" xref="yes"/>
+</segment>
+<segment>
+<pinref part="TEENSY41" gate="G$1" pin="28"/>
+<wire x1="15.24" y1="104.14" x2="10.16" y2="104.14" width="0.1524" layer="91"/>
+<label x="10.16" y="104.14" size="1.016" layer="95" rot="R180" xref="yes"/>
 </segment>
 </net>
 <net name="LED(BOARD)" class="0">
