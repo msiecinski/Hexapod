@@ -172,7 +172,7 @@ void Move(movetype direction,int offset)
         in set direction and distance
         This function is something like control interface of the robot
         1.Setting offset(depends on direction)
-        2.Quantization  
+        2.Quantization //turn off 
         3.Leg 3(base position)
         TODO:
             Check ground
@@ -285,6 +285,7 @@ void Move(movetype direction,int offset)
             setPosition[4+j].delay = VERTICALMOVEDELAY;
             SetThreeLegs(j,setPosition);
         }
+        //switch offsets
         for(int i = 0; i<6; i++)
         {   
             if(i == 1 || i == 4)
@@ -309,7 +310,7 @@ void Move(movetype direction,int offset)
             i += 2;
         }*/
     }
- }
+}
 
 void MoveAtPlace(movetype direction,int offset)
 {
