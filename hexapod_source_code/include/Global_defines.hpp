@@ -45,7 +45,7 @@
 
     #define CALIBRATION         7                       //calibration interupt for 50Hz pwm
     #define INTERRUPTCOUNTER    (4000 - CALIBRATION)    //interupt counter for 50Hz pwm
-    #define LIMITHI             (500 + 12)              //limit for skip conditions after every 2.5ms //12 bcs of 0x1FF
+    #define LIMITHI             (500 + 11)              //limit for skip conditions after every 2.5ms //11 bcs of 0x1FF
     
     #define DELAYTIMER1         50000                   //!!!!!!!!!!!!!!!!!!!!!!!
     #define PWMTIMEBASE         5                       //time base for interrupts
