@@ -75,3 +75,12 @@ void RotateCordinate(const int leg, position &pos, const int offsetX, const int 
         }
     }
 }
+
+double CalculateHeight(double angle, double length)
+{
+    /* 
+        Funtion used to calculate height 
+        needed to obtain the desired tilt
+    */
+    return(sqrt((2*length*length)-(2*length*length*cos(angle))));
+}

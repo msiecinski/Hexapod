@@ -7,5 +7,6 @@
   void InversKinematics(hexapod &);          //
   void AngleToDuty(hexapod &);              //conver input angles to duty for pwm
   void RotateCordinate(const int, position &, const int, const int = 0);
+  double CalculateHeight(double, double);
    
 #endif /* Kinematics_H_ */
