@@ -27,6 +27,7 @@
         position offset;                                //offset postion leg(when "no" ground)
         volatile uint32_t duty[3];                      //duty for pwm
         volatile uint32_t delay;                        //delay value flag
+        volatile uint32_t update;                       //update value flag
     };
 
     enum movetype {forvard = 0, backward, forvardleft, forvardright, left, right, up, down,wider,narrower };
@@ -52,7 +53,7 @@
     #define DELAYTIMEBASE       1000                    //time base for delay interrupts
     #define DELAYCOUNTERMAXVAL  10                     //max value for delay_counter
        
-    #define VERTICALMOVEDELAY   2                       //delays for vertical legs move
+    #define VERTICALMOVEDELAY   6                       //delays for vertical legs move
      //constants for bool fucntions
     #define TRUE                1          
     #define FALSE               0

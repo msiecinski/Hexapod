@@ -7,6 +7,8 @@ extern volatile uint32_t delayFlag;
 extern volatile int adc[2];
 extern int sharpSensor;
 
+volatile uint32_t dutyBuff[6][3];
+
 void PWM50Hz(void)
 {   
     static volatile uint32_t counter = 0;
@@ -43,75 +45,75 @@ void PWM50Hz(void)
 
     if(counter < (LIMITHI+1))   //skip all by~87.5% time(17.5ms)
     {   
-        if (counter ==  hexapodControl[5].duty[0]) 
+        if (counter ==  dutyBuff[5][0]) 
         {
             digitalWrite(LEG6_1, LOW);
         }
-        if (counter == hexapodControl[5].duty[1]) 
+        if (counter == dutyBuff[5][1]) 
         {
             digitalWrite(LEG6_2, LOW);
         }
-        if (counter == hexapodControl[5].duty[2]) 
+        if (counter == dutyBuff[5][2]) 
         {
             digitalWrite(LEG6_3, LOW);
         }
-        if (counter ==  hexapodControl[4].duty[0]) 
+        if (counter ==  dutyBuff[4][0]) 
         {
             digitalWrite(LEG5_1, LOW);
         }
-        if (counter ==  hexapodControl[4].duty[1]) 
+        if (counter ==  dutyBuff[4][1]) 
         {
             digitalWrite(LEG5_2, LOW);
         }
-        if (counter ==  hexapodControl[4].duty[2]) 
+        if (counter ==  dutyBuff[4][2]) 
         {
             digitalWrite(LEG5_3, LOW);
         }
-        if (counter ==  hexapodControl[3].duty[0]) 
+        if (counter ==  dutyBuff[3][0]) 
         {
             digitalWrite(LEG4_1, LOW);
         }
-        if (counter ==  hexapodControl[3].duty[1]) 
+        if (counter ==  dutyBuff[3][1]) 
         {
             digitalWrite(LEG4_2, LOW);
         }
-        if (counter ==  hexapodControl[3].duty[2]) 
+        if (counter ==  dutyBuff[3][2]) 
         {
             digitalWrite(LEG4_3, LOW);
         }
-        if (counter ==  hexapodControl[2].duty[0]) 
+        if (counter ==  dutyBuff[2][0]) 
         {
             digitalWrite(LEG3_1, LOW);
         }
-        if (counter ==  hexapodControl[2].duty[1]) 
+        if (counter ==  dutyBuff[2][1]) 
         {
             digitalWrite(LEG3_2, LOW);
         }
-        if (counter ==  hexapodControl[2].duty[2]) 
+        if (counter ==  dutyBuff[2][2]) 
         {
             digitalWrite(LEG3_3, LOW);
         }
-        if (counter ==  hexapodControl[1].duty[0]) 
+        if (counter ==  dutyBuff[1][0]) 
         {
             digitalWrite(LEG2_1, LOW);
         }
-        if (counter ==  hexapodControl[1].duty[1]) 
+        if (counter ==  dutyBuff[1][1]) 
         {
             digitalWrite(LEG2_2, LOW);
         }
-        if (counter ==  hexapodControl[1].duty[2]) 
+        if (counter ==  dutyBuff[1][2]) 
         {
             digitalWrite(LEG2_3, LOW);
         }
-        if (counter ==  hexapodControl[0].duty[0]) 
+        if (counter ==  dutyBuff[0][0]) 
         {
             digitalWrite(LEG1_1, LOW);
         }
-        if (counter ==  hexapodControl[0].duty[1]) 
+        if (counter ==  dutyBuff[0][1]) 
         {
             digitalWrite(LEG1_2, LOW);
         }
-        if (counter ==  hexapodControl[0].duty[2]) 
+        if (counter ==  dutyBuff[0][2]) 
         {
             digitalWrite(LEG1_3, LOW);
         }

@@ -5,35 +5,32 @@
 
 extern std::array<hexapod, 6> hexapodControl;
 extern volatile int stepSize;
+extern volatile uint32_t dutyBuff[6][3]; 
+
 volatile uint32_t delayFlag = 0;
 
-
-_Bool SetPosition(int leg, const hexapod &pos)
+void SetPosition(int leg, const hexapod &pos)
 {
     /*
-        Function SetPositions used to set position selected robot leg
-        If delayFlag = 1 function do nothing and return false(0)
-        if delayFlag = 0 function set position and return true(1)
+        Function SetPositions used to calculate position selected robot leg
     */
-
-    if(delayFlag != 0)
-        return FALSE;
     hexapodControl[leg].xyz = pos.xyz;          //copy position
     hexapodControl[leg].delay = pos.delay;      //copy delay
     hexapodControl[leg].offset = pos.offset;    //copy offset !!!!!!!!!!!!can be change
+    hexapodControl[leg].update = 1;             //new values, so set flag!
     InversKinematics(hexapodControl[leg]);
-
-    if(hexapodControl[leg].delay != 0)
-    {
-        delayFlag = hexapodControl[leg].delay;  //should be clear via intterupt every x(?) ms!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
-        hexapodControl[leg].delay = 0; //clear flag in matrix(Kappa) 
-    }
-    return TRUE;
 }
 
-_Bool SetLeg(int leg,const hexapod &pos)
+void SetLeg(int leg, const hexapod &pos)
 {
-     return SetPosition(leg,pos);
+    return SetPosition(leg,pos);
+}
+
+void SetOneLeg(int leg, const hexapod &pos)
+{
+    SetLeg(leg,pos);
+    while(!PushBuff());
+    return;
 }
 
 void SetThreeLegs(int legNum,hexapod *pos)
@@ -43,11 +40,11 @@ void SetThreeLegs(int legNum,hexapod *pos)
         legNum = 0 -set legs 1,3,5(tab[0],[2],[4])
         legNum = 1 - set legs 2,4,6(tab[1],[3],[5])
      */
-    //SetLeg((legNum+0),pos[0+legNum]);
-    //SetLeg((legNum+2),pos[2+legNum]);
-    while(!SetLeg((legNum+0),pos[0+legNum]));
-    while(!SetLeg((legNum+2),pos[2+legNum]));
-    while(!SetLeg((legNum+4),pos[4+legNum]));
+    SetLeg((legNum+0),pos[0+legNum]);
+    SetLeg((legNum+2),pos[2+legNum]);
+    SetLeg((legNum+4),pos[4+legNum]);
+    while(!PushBuff());
+    return;
 }
 
 void SetAllLegs(hexapod *pos)
@@ -56,12 +53,37 @@ void SetAllLegs(hexapod *pos)
     /*  Function is used to set position 
         all legs @same time(if not delay performed)
     */
-    while(!SetLeg((0),pos[0]));
-    while(!SetLeg((1),pos[1]));
-    while(!SetLeg((2),pos[2]));
-    while(!SetLeg((3),pos[3]));
-    while(!SetLeg((4),pos[4]));
-    while(!SetLeg((5),pos[5]));
+    SetLeg((0),pos[0]);
+    SetLeg((1),pos[1]);
+    SetLeg((2),pos[2]);
+    SetLeg((3),pos[3]);
+    SetLeg((4),pos[4]);
+    SetLeg((5),pos[5]);
+    while(!PushBuff());
+    return;
+}
+
+_Bool PushBuff(void)
+{
+    if(delayFlag != 0)
+        return FALSE;
+    for(int i  = 0; i< 6; i++)
+    {
+        if(hexapodControl[i].update != 0)
+        {
+            for(int k =0; k <3; k++)
+            {
+                dutyBuff[i][k] = hexapodControl[i].duty[k];  
+            }
+            hexapodControl[i].update = 0;   //clear update flag
+            if(hexapodControl[i].delay != 0)
+            {
+                delayFlag = hexapodControl[i].delay;  //should be clear via intterupt every x(?) ms!!!!!!!!!!!!!!!!!!!!!!!!!!!!! 
+                hexapodControl[i].delay = 0; //clear flag in matrix(Kappa) 
+            }
+        }
+    }
+    return TRUE;
 }
 
 void SlideHorizontal(int movement_r,int movement_l)
@@ -81,6 +103,7 @@ void SlideHorizontal(int movement_r,int movement_l)
         pos[k].xyz = hexapodControl[k].xyz; //copy actual position(xyz)
         pos[k].delay = 0;                   //clear all delay flags (for be sure)
         pos[k].offset = {0, 0, 0};          //clear all offsets (for be sure)
+        pos[k].update = 0;                  //clear update flag
     }
                            
     while(SligerFlag)
@@ -126,10 +149,7 @@ void SlideHorizontal(int movement_r,int movement_l)
         RotateCordinate(4,pos[4].xyz,j);
         RotateCordinate(5,pos[5].xyz,j);
         pos[5].delay = 5;               //after last leg always delay
-        for(int k = 0; k < 6; k++)
-        {
-            while(!SetPosition(k,pos[k]));
-        }
+        SetAllLegs(pos);
         if(0 == movement_r && 0 == movement_l)
             SligerFlag = 0;
     }
@@ -155,13 +175,14 @@ void FindGround(int leg)
     setPosition.delay = VERTICALMOVEDELAY;              //set delay
     setPosition.xyz = hexapodControl[leg].xyz;          //copy position
     setPosition.offset = hexapodControl[leg].offset;    //copy offset
+    setPosition.update = 0;                             //flag for update                  
     interration = MOVEHEIGHT + setPosition.offset.z;
     //First again move up leg
     for(int k = 1; k<=interration; k++)
     {
         setPosition.xyz.z = hexapodControl[leg].xyz.z + 1;
         setPosition.offset.z = hexapodControl[leg].offset.z - 1;
-        while(!SetLeg(leg,setPosition));
+        SetOneLeg(leg,setPosition);
     }
 }
 
@@ -233,6 +254,7 @@ void Move(movetype direction,int offset)
     for(int i = 0; i<6; i++)
     {   
         setPosition[i].delay = 0;                   //init 0 value for delay 
+        setPosition[i].update = 0;                   //init 0 value for update flag 
         setPosition[i].offset = {0,0,0};            //clear all offsets (for be sure)
         setPosition[i].xyz = hexapodControl[i].xyz; //copy actual position
         posOffsetTMP[i] = posOffset[i];             //copy value for nextinterration 
@@ -267,7 +289,7 @@ void Move(movetype direction,int offset)
         //set delay
         setPosition[5].delay = 1;
         SetAllLegs(setPosition);
-         //move down slowly
+        //move down slowly
         for(int k = 1; k<=MOVEHEIGHT; k++)
         {
             for(int i = j;  i<6; )
@@ -301,7 +323,7 @@ void Move(movetype direction,int offset)
                 setPosition[i].xyz.z = hexapodControl[i].xyz.z-1;
                 setPosition[i].delay = VERTICALMOVEDELAY; 
                 hexapodControl[i].offset.z -= 1;
-                SetLeg(i,setPosition[i]);
+                SetOneLeg(i,setPosition[i]);
                 if(hexapodControl[i].offset.z < -5)
                 {
                     FindGround(); //still no ground so do something diffrent
@@ -348,6 +370,7 @@ void MoveAtPlace(movetype direction,int offset)
             setPosition[i].delay = 0;                       //clear all delay flags (for be sure)
             setPosition[i].offset = {0, 0, 0};              //clear all offsets (for be sure)
             setPosition[i].xyz.x = hexapodControl[i].xyz.x; //copy actual position(xyz)
+            setPosition[i].update = 0;                      //flag for update
             if(axis == 0)
             {
                 setPosition[i].xyz.y = hexapodControl[i].xyz.y;
@@ -448,6 +471,7 @@ void PrepareWalk(movetype direction)
     for(int i = 0; i<6; i++)
     {   
         setPosition[i].delay = 0;                   //init 0 value for delay 
+        setPosition[i].update = 0;                   //init 0 value for update flag 
         setPosition[i].offset = {0,0,0};            //clear all offsets (for be sure)
         setPosition[i].xyz = hexapodControl[i].xyz; //copy actual position
     }
@@ -463,7 +487,7 @@ void PrepareWalk(movetype direction)
         {
             setPosition[i].xyz.z = hexapodControl[i].xyz.z+1;
             setPosition[i].delay = VERTICALMOVEDELAY;
-            while(!SetLeg(i,setPosition[i]));
+            SetOneLeg(i,setPosition[i]);
         }
         if(i == 3 || i == 0)
         {
@@ -491,13 +515,13 @@ void PrepareWalk(movetype direction)
         }
         setPosition[i].xyz.z = hexapodControl[i].xyz.z;
         setPosition[i].delay = VERTICALMOVEDELAY;
-        while(!SetLeg(i,setPosition[i]));
-
+        SetOneLeg(i,setPosition[i]);
+        
         for(int k = 1; k<=MOVEHEIGHT; k++)
         {
             setPosition[i].xyz.z = hexapodControl[i].xyz.z-1;
             setPosition[i].delay = VERTICALMOVEDELAY;
-            while(!SetLeg(i,setPosition[i]));
+            SetOneLeg(i,setPosition[i]);
         }
     }  
 }
