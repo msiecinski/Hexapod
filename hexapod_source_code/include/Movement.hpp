@@ -3,8 +3,8 @@
 
 #include <Global_defines.hpp>
 
-void SetPosition(int, const hexapod &);  //
-void SetLeg(int, const hexapod &);
+inline void SetPosition(int, const hexapod &);  //
+inline void SetLeg(int, const hexapod &);
 void SetOneLeg(int, const hexapod &);           
 void SetThreeLegs(int,hexapod *);
 void SetAllLegs(hexapod *);

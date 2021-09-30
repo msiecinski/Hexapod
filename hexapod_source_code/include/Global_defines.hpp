@@ -35,7 +35,7 @@
     //constants based on the robot dimensions 
     #define A1   (5)
     #define A2   (15)
-    #define A3   (2)//(22)
+    #define A3   (25)//(22)
     #define E    (2)
 
     #define CIRCLEVAL           2                       //diff ofset for turning
@@ -53,7 +53,8 @@
     #define DELAYTIMEBASE       1000                    //time base for delay interrupts
     #define DELAYCOUNTERMAXVAL  10                     //max value for delay_counter
        
-    #define VERTICALMOVEDELAY   6                       //delays for vertical legs move
+    #define VERTICALMOVEDELAY   2                       //delays for vertical legs move
+    #define HORIZONTALMOVEDELAY 5                      //delays for horizontal legs move
      //constants for bool fucntions
     #define TRUE                1          
     #define FALSE               0

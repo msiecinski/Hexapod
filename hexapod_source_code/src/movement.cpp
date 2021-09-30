@@ -9,7 +9,7 @@ extern volatile uint32_t dutyBuff[6][3];
 
 volatile uint32_t delayFlag = 0;
 
-void SetPosition(int leg, const hexapod &pos)
+inline void SetPosition(int leg, const hexapod &pos)
 {
     /*
         Function SetPositions used to calculate position selected robot leg
@@ -21,7 +21,7 @@ void SetPosition(int leg, const hexapod &pos)
     InversKinematics(hexapodControl[leg]);
 }
 
-void SetLeg(int leg, const hexapod &pos)
+inline void SetLeg(int leg, const hexapod &pos)
 {
     return SetPosition(leg,pos);
 }
@@ -201,7 +201,7 @@ void Move(movetype direction,int offset)
     int posOffset[6];          //calculate offests depends on actual posiotn and move type(direction)
     int posOffsetTMP[6];
     hexapod setPosition[6];    //calculate step position for all legs
-   
+     int step;
     switch(direction)
     {
        default:
@@ -282,13 +282,33 @@ void Move(movetype direction,int offset)
             SetThreeLegs(j,setPosition);
         }
         //now lets move
-        for(int i = 0;  i<6; i++)
-        { 
-            RotateCordinate(i,setPosition[i].xyz,posOffset[i]);     //rotate offset
-        }
+        while(posOffset[0+j] || posOffset[2+j] || posOffset[4+j])
+        {
+            for(int i = 0;  i<6; i++)
+            { 
+                if(posOffset[i]>0)
+                {
+                    step = 1;
+                    posOffset[i]--; 
+                }
+                else
+                {
+                    if(posOffset[i]<0)
+                    {
+                        step = -1;
+                        posOffset[i]++; 
+                    }
+                    else 
+                    {
+                        step = 0;  //do nothing untill all posOffset[i]!-= 0;
+                    }
+                }
+                RotateCordinate(i,setPosition[i].xyz,step);     //rotate step
+            }
         //set delay
-        setPosition[5].delay = 1;
+        setPosition[5].delay = HORIZONTALMOVEDELAY;
         SetAllLegs(setPosition);
+        }
         //move down slowly
         for(int k = 1; k<=MOVEHEIGHT; k++)
         {
