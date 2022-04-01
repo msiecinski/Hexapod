@@ -37,16 +37,67 @@ void setup(void)
   Serial.begin(115200);         //olny in debug version
   for(int i=0;i<6;i++)
   {
-    if(i == 3 || i == 0)
-      tmp.xyz = {0,19,BASEHEIGHT};
-    else
-      RotateCordinate(i,tmp.xyz,0,19);
-    SetLeg(i,tmp);
+   // if(i == 3 || i == 0)
+      tmp.xyz = {0,15,BASEHEIGHT};
+    //else
+     //
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     
+     RotateCordinate(i,tmp.xyz,0,15);
+    SetOneLeg(i,tmp);
     tmp = startup;
   }  
-  while(!PushBuff());
 }
+void loop2() {
+  int incomingByte;
 
+  if (Serial.available() > 0) {
+    incomingByte = Serial.read();
+    Serial.print("USB received: ");
+    Serial.println(incomingByte, DEC);
+    HWSERIAL.print("USB received:");
+    HWSERIAL.println(incomingByte, DEC);
+  }
+  if (HWSERIAL.available() > 0) {
+    incomingByte = HWSERIAL.read();
+    Serial.print("UART received: ");
+    Serial.println(incomingByte, DEC);
+    HWSERIAL.print("UART received:");
+    HWSERIAL.println(incomingByte, DEC);
+  }
+}
 void loop(void)
 {
  // while(1){};
@@ -58,7 +109,16 @@ void loop(void)
   //Move(backward,5);
   //delay(500);
   //PrepareWalk(forvard);
-  while(1)
+  int static status = 0;
+  int incomingByte;
+  if (HWSERIAL.available() > 0) {
+      incomingByte = HWSERIAL.read();
+  }
+  if(incomingByte == 97)
+    status = 5;
+  if(incomingByte == 102)
+    status = 0;
+  if(status == 5)
   {
 
     if(1)
